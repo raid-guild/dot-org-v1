@@ -7,9 +7,9 @@ const LorePage = () => (
   <Layout>
     <div className="Hero">
       <div className="Hero__Contents">
-        <h1>Library</h1>
-        <p>A library of example components.</p>
-        <Link to="/">Go Home.</Link>
+        <h1>Lore</h1>
+        <p>About the Raid Guid</p>
+        <Link to={`/`}>Go Home.</Link>
       </div>
     </div>
     <div className="Block">
