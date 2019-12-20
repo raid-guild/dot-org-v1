@@ -1,0 +1,99 @@
+@import 'variables';
+
+// Typography
+body {
+    font-family: $body-font;
+    color: $body-color;
+    font-size: $body-font-size;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+p {
+    font-family: $body-font;
+    color: $body-color;
+    font-size: $body-font-size;
+    margin-top: $base-margin;
+    margin-bottom: $base-margin;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $primary;
+    font-family: $heading-font;
+    margin-top: $base-margin;
+    margin-bottom: $base-margin;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 100;
+}
+
+a {
+    color: $link-color;
+}
+
+// Blocks
+.Hero {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;;
+    justify-content: center;
+    &__Contents {
+        padding: $base-padding;
+        h1 {
+            font-size: 2.75em;
+        }
+        p, a {
+            font-size: 1.5em;
+        }
+    }
+}
+.Block {
+    position: relative;
+    &__Contents {
+        width: calc(100% - 300px);
+        padding: $base-padding * 3;
+        @media (max-width: $tablet){
+            width: calc(100% - 100px);
+            padding: $base-padding;
+        }
+    }
+}
+
+// Elements
+.Row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+    &--33 {
+        flex-basis: 30%;
+        margin-right: 3%;
+        &:nth-child(3n) {
+            flex-basis: 33%;
+            margin-right: 0;
+        }
+    }
+    @media (max-width: $tablet) {
+        flex-basis: 100% !important;
+        margin: 25px auto;
+    }
+}
+
+
+// Modifiers / Utils
+
+.BackgroundImage {
+    // background image
+  background-size: cover;
+  background-origin: center center;
+  background-repeat: no-repeat;
+}

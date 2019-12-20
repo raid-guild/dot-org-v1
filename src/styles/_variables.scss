@@ -1,0 +1,32 @@
+// Import Fonts from Google
+// -- Rubik
+@import url('https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,700,900');
+// -- Display
+@import url('https://fonts.googleapis.com/css?family=Erica+One|Plaster|Rubik+Mono+One&display=swap');
+// --  Data (Mono)
+
+// -- Body
+
+// Palette
+$primary: #000;
+$primary-hover: lighten($primary, 5%);
+
+//Media Queries
+$tablet: 768px;
+$phone: 480px;
+
+// Typography
+$body-font: 'Roboto', sans-serif;
+$heading-font: 'Rubik Mono One', sans-serif;
+$body-font-size: 21px;
+
+// General Colors
+$body-color: grey;
+$headings-color: $primary;
+$link-color: blue;
+$background-light: white;
+$background-dark: black;
+
+// Layout
+$base-padding: 50px;
+$base-margin: 15px;
