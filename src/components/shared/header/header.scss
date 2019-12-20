@@ -6,9 +6,10 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1;
   &__Contents {
-    padding: $base-padding;
-    width: calc(100% - 100px);
+    padding: 25px;
+    width: calc(100% - 50px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -16,15 +17,18 @@
       color: $primary;
       width: 100%;
       text-decoration: none;
-      &:hover { color: $primary-hover; }
+      &:hover {
+        color: $primary-hover;
+      }
       &__Type {
         font-size: 1.5em;
         display: block;
+        color: white;
         @media (max-width: $tablet) {
           display: none;
         }
       }
-      img { 
+      img {
         height: 80px;
         float: left;
         margin-right: 5px;
@@ -33,9 +37,8 @@
     }
     .Nav {
       &__Link {
-          margin-left: 1rem;
+        margin-left: 1rem;
       }
     }
   }
 }
-

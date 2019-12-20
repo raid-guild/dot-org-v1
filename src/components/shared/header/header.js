@@ -1,19 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import TopNav from '../topNav/TopNav'
 
-import Brand from '../../../images/Brutal__Icon.png'
+import Brand from '../../../images/raidguild__icon.png'
 import './header.scss'
 
 const Header = ({ siteTitle }) => (
   <div className="Header">
     <div className="Header__Contents">
-      <Link className="Logo" to="/">
+      <Link className="Logo" to={`/`}>
         <img src={Brand} alt="Brand" />
         <h1 className="Logo__Type">{siteTitle}</h1>
       </Link>
-      <nav className="Nav">
-        <Link to="lore">Lore</Link>
-      </nav>
+      <TopNav />
     </div>
   </div>
 )
