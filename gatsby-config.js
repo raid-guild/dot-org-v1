@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Brutal Dapp',
+    title: 'Raid Guild',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

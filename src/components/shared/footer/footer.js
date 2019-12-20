@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import Brand from '../../../images/Brutal__Icon.png'
 
+import Brand from '../../../images/Brutal__Icon.png'
 import './footer.scss'
 
 const Footer = ({ siteTitle }) => (
@@ -9,12 +9,10 @@ const Footer = ({ siteTitle }) => (
     <div className="Footer__Contents">
       <Link className="Logo" to="/">
         <img src={Brand} alt="Brand" />
-        <h1 className="Logo__Type">
-            {siteTitle}
-        </h1>
+        <h1 className="Logo__Type">{siteTitle}</h1>
       </Link>
       <nav className="Nav">
-        <Link to="library">Library</Link>
+        <Link to="lore">Lore</Link>
       </nav>
     </div>
   </div>
