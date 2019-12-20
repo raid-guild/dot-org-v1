@@ -1,4 +1,4 @@
-#raid-guild dot-org
+# raid-guild dot-org
 
 ## Quick start
 
