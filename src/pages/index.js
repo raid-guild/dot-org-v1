@@ -22,102 +22,41 @@ const IndexPage = () => (
     </div>
     <div className="Block">
       <div className="Block__Contents">
-        <h2>Brief Intro</h2>
+        <h2>RAID On!</h2>
         <p>
-          We are a decentralized collective of web3 experts with a variety of
-          skillsets needed to tackle most problems.
+          We believe in Web3, and are here to build it, use it, propagate it.
         </p>
+        <p>
+          DAOs will power the future of work. Through the network of MetaCartel,
+          the builders have united to form a decentralized agency; a working
+          group of freelancers, bounty hunters and hired guns ready to slay your
+          web3 product monsters.
+        </p>
+        <h2>Skills</h2>
         <ul>
-          <li>Development</li>
-          <li>Design</li>
+          <li>Full Stack Development</li>
+          <li>Smart Contracts</li>
+          <li>UX/UI Design</li>
+          <li>Branding</li>
+          <li>Visual Design</li>
           <li>Marketing</li>
           <li>Product</li>
           <li>Content</li>
+          <li>Memes</li>
         </ul>
       </div>
     </div>
     <div className="Block">
       <div className="Block__Contents">
-        <h2>Our Work</h2>
+        <h2>Project Partners</h2>
         <p>
-          We're very new, but come from a variety or projects in the ecosystem.
+          We're very new, but work with a variety of projects in the ecosystem.
         </p>
         <div className="ProjectLogos">
           <img src={DaohausLogo} />
           <img src={PokemolLogo} />
           <img src={MetaCartelLogo} />
           <img src={MolochLogo} />
-        </div>
-      </div>
-    </div>
-    <div className="Block">
-      <div className="Block__Contents">
-        <div className="Row">
-          <div className="Column Column--33">
-            <h3>Raid Parties</h3>
-            <p>
-              A Raid Party is a small agile team built from members of the
-              Guild. Raid Parties can be formed to tackle both internal and
-              external projects.
-            </p>
-          </div>
-          <div className="Column Column--33">
-            <h3>External Projects</h3>
-            <p>
-              External projects can hire the Raid Guild to help them. External
-              projects are taxed 10% which goes back to the Guild Bank. Funds in
-              the Guild Bank can then be deployed to internal projects.
-            </p>
-          </div>
-          <div className="Column Column--33">
-            <h3>Internal Projects</h3>
-            <p>
-              Internal projects are our own ideas from the Guild. Can be funded
-              directly by the Guild or an external funder.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div className="Block">
-      <div className="Block__Contents">
-        <div className="Row">
-          <div className="Column Column--33">
-            <h3>Moloch</h3>
-            <p>The Guild uses Moloch for its DAO.</p>
-            <a
-              href="https://github.com/MolochVentures/moloch"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Code
-            </a>
-          </div>
-          <div className="Column Column--33">
-            <h3>DAOHaus</h3>
-            <p>Our dao was launched with Daohaus</p>
-            <a
-              href="https://daohaus.club/dao/0xbd6fa666fbb6fdeb4fc5eb36cdd5c87b069b24c1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on Daohaus
-            </a>
-          </div>
-          <div className="Column Column--33">
-            <h3>Pokemol</h3>
-            <p>
-              Pokemol (Pocket Moloch) is used for submitting proposals and
-              voting.
-            </p>
-            <a
-              href="https://pokemol.com/dao/0xbd6fa666fbb6fdeb4fc5eb36cdd5c87b069b24c1"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View our Pokemol
-            </a>
-          </div>
         </div>
       </div>
     </div>

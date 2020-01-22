@@ -14,42 +14,31 @@ const LorePage = () => (
     </div>
     <div className="Block">
       <div className="Block__Contents">
-        <h1>Grid</h1>
-        <div className="Row">
-          <div className="Column Column--33">
-            <h3>Column</h3>
-            <p>
-              Bitcoin was the soft fork for some IPO! Dash data mining the
-              automated delegated proof-of-stake in few trustless when Bitcoin
-              launched lots of technical analysis of a whitepaper, however,
-              Dogecoin data mining the burned token generation event! Blockchain
-              launched many efficient cold wallet because Ontology returns some
-              constant mnemonic phrase behind some vaporware.
-            </p>
-          </div>
-          <div className="Column Column--33">
-            <h3>Column</h3>
-            <p>
-              Binance Coin detected the quick fork, so ERC20 token standard did
-              a quick decentralisation since they thinking some whitepaper for
-              few hashrate. Dash based on lots of burned pre-mine, but Litecoin
-              sharded the dormant ashdraked behind some cold wallet. ERC20 token
-              standard stuck the raiden network until the bubble when Basic
-              Attention Token is many robust proof of authority, so Lightning
-              Network is wary of many provably proof of work!
-            </p>
-          </div>
-          <div className="Column Column--33">
-            <h3>Column</h3>
-            <p>
-              Since Satoshi Nakamoto chose lots of block height, VeChain
-              thinking few confirmation of some on-ledger currency! Silk Road
-              chose the immutable delegated proof-of-stake at the arbitrage,
-              however, Golem thought the hot raiden network because Mt. Gox
-              stacks few dormant pre-sale for a dolphin!
-            </p>
-          </div>
-        </div>
+        <h3>Raid Parties</h3>
+        <p>
+          A Raid Party is a small agile team built from members of the Guild.
+          Raid Parties can be formed to tackle both internal and external
+          projects.
+        </p>
+      </div>
+    </div>
+    <div className="Block">
+      <div className="Block__Contents">
+        <h3>External Projects</h3>
+        <p>
+          External projects can hire the Raid Guild to help them. External
+          projects are taxed 10% which goes back to the Guild Bank. Funds in the
+          Guild Bank can then be deployed to internal projects.
+        </p>
+      </div>
+    </div>
+    <div className="Block">
+      <div className="Block__Contents">
+        <h3>Internal Projects</h3>
+        <p>
+          Internal projects are our own ideas from the Guild. Can be funded
+          directly by the Guild or an external funder.
+        </p>
       </div>
     </div>
   </Layout>
