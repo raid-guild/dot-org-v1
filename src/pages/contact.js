@@ -39,33 +39,34 @@ const ContactPage = () => {
             </button>
           </div>
         </div>
+        <div>
+          <ReactTypeformEmbed
+            popup
+            autoOpen={false}
+            url="https://cooperturley381314.typeform.com/to/Bz5lWV"
+            hideHeaders
+            hideFooter
+            buttonText="Go!"
+            style={{ top: 100 }}
+            ref={tf => {
+              hireEmbed = tf
+            }}
+          />
+
+          <ReactTypeformEmbed
+            popup
+            autoOpen={false}
+            url="https://demo.typeform.com/to/njdbt5"
+            hideHeaders
+            hideFooter
+            buttonText="Go!"
+            style={{ top: 100 }}
+            ref={tf => {
+              joinEmbed = tf
+            }}
+          />
+        </div>
       </Layout>
-
-      <ReactTypeformEmbed
-        popup
-        autoOpen={false}
-        url="https://cooperturley381314.typeform.com/to/Bz5lWV"
-        hideHeaders
-        hideFooter
-        buttonText="Go!"
-        style={{ top: 100 }}
-        ref={tf => {
-          hireEmbed = tf
-        }}
-      />
-
-      <ReactTypeformEmbed
-        popup
-        autoOpen={false}
-        url="https://demo.typeform.com/to/njdbt5"
-        hideHeaders
-        hideFooter
-        buttonText="Go!"
-        style={{ top: 100 }}
-        ref={tf => {
-          joinEmbed = tf
-        }}
-      />
     </>
   )
 }
