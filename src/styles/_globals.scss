@@ -8,6 +8,7 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.5;
+  background: $background-dark;
 }
 
 p {
@@ -24,7 +25,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $primary;
+  color: $heading-color;
   font-family: $heading-font;
   margin-top: $base-margin;
   margin-bottom: $base-margin;
@@ -39,37 +40,84 @@ h4 {
 
 a {
   color: $link-color;
+  text-decoration: none;
+  transition: all 0.15s linear;
+  &:hover {
+    color: lighten($link-color, 10%);
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+// Elements
+
+.Button {
+  border: 2px solid $primary;
+  color: $primary;
+  background: transparent;
+  padding: 10px 15px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 5px;
+  line-height: 32px;
+  &.Filled {
+    background: $primary;
+    color: $background-dark;
+  }
+}
+
+.ButtonGroup {
+  .Button:not(:last-child) {
+    margin-right: 15px;
+  }
 }
 
 // Blocks
 .Hero {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 95vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  .HeroBorder {
+    position: absolute;
+    margin: 25px;
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+    border: 2px solid $primary;
+    pointer-events: none;
+  }
   &__Contents {
     padding: $base-padding;
-    max-width: 800px;
+    padding-left: 150px;
+    width: calc(100% - 100px);
     h1 {
       font-size: 2.75em;
+      color: $primary;
     }
     p,
     a {
       font-size: 1.5em;
+      color: $primary;
     }
   }
   &.Home {
     h1,
     p {
-      color: white !important;
+      font-size: 1.5em;
+      line-height: 1.15em;
+      max-width: 500px;
+      margin-bottom: 50px;
     }
-    background-image: url('../images/epic-boss-fight-01.jpg');
+    background-image: url('../images/raid__banner-img.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
   }
 }
 .Block {
@@ -85,17 +133,28 @@ a {
 }
 
 // Elements
-.Row {
+.Row,
+.Grid {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  max-width: $grid;
+  margin: 0 auto;
   justify-content: space-evenly;
 }
 
 .Column {
   display: flex;
   flex-direction: column;
+  &--50 {
+    flex-basis: 45%;
+    margin-right: 5%;
+    &:nth-child(2n) {
+      flex-basis: 50%;
+      margin-right: 0;
+    }
+  }
   &--33 {
     flex-basis: 30%;
     margin-right: 3%;
@@ -119,12 +178,22 @@ a {
   background-repeat: no-repeat;
 }
 
-.ProjectLogos {
+// Blocks
+
+.Portfolio {
+  text-align: center;
+  .Block__Contents {
+  }
+}
+
+.Portfolio__Images {
   display: flex;
-  align-items: center;
+  flex-direction: row;
+  align-content: center;
   justify-content: center;
   flex-wrap: wrap;
   img {
-    max-width: 50%;
+    width: 240px;
+    height: auto;
   }
 }
