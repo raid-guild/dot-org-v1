@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout/layout'
 
-import RaidTeeImg from '../images/raid__fantasy--tee.png'
+import RaidTeeImg from '../images/raid__fantasy--tee-technicolor.png'
 
 import DaohausLogo from '../images/projects/daohaus__logo--black.png'
 import PokemolLogo from '../images/projects/pokemol__brand--standard.png'
