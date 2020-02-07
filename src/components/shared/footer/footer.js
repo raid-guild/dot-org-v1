@@ -12,6 +12,7 @@ const Footer = ({ siteTitle }) => (
         <h1 className="Logo__Type">{siteTitle}</h1>
       </Link>
       <nav className="Nav">
+        <Link to={`/contact`}>Contact</Link>
         <a
           className="Nav__Link"
           href="https://twitter.com/RaidGuild"

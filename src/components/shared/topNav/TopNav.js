@@ -21,9 +21,9 @@ const TopNav = () => {
         <Link to={`/`} activeClassName="Active">
           Home
         </Link>
-        <Link to={`/lore`} activeClassName="Active">
-          Lore
-        </Link>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#services">Services</a>
+        <a href="#join">Join</a>
       </nav>
       {/* Start Hamburger */}
       <button className={hamburgerClass} type="button" onClick={toggleNav}>
@@ -36,9 +36,9 @@ const TopNav = () => {
           <Link to={`/`} onClick={toggleNav}>
             Home
           </Link>
-          <Link to={`/lore`} onClick={toggleNav}>
-            Lore
-          </Link>
+          <a href="#manifesto">Manifesto</a>
+          <a href="#services">Services</a>
+          <a href="#join">Join</a>
         </div>
       </div>
       {/* End Hamburger */}

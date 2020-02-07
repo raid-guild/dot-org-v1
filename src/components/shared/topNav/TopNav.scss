@@ -11,18 +11,6 @@
     padding: 15px 25px;
     width: calc(100% - 50px);
   }
-  &__Brand {
-    font-size: 36px;
-    margin: 0;
-    img {
-      margin: 0;
-      display: inline-block;
-      max-width: 200px;
-      @media (max-width: $tablet) {
-        max-width: 160px;
-      }
-    }
-  }
   &__Desktop {
     margin-left: auto;
     display: none;
@@ -79,12 +67,12 @@
 
 .TopNav__Mobile {
   position: fixed;
-  padding: 75px 25px 25px 25px;
+  padding: 150px 75px 25px 25px;
   top: 0px;
   right: 0px;
   width: 100%;
   height: 100vh;
-  background: $background-light;
+  background: $background-dark;
   opacity: 0;
   z-index: -1;
   transition: all 0.1s linear;
@@ -114,9 +102,9 @@
 
 .navbar__hamburger {
   position: absolute;
-  top: 50%;
+  top: 125px;
   transform: translateY(-50%);
-  right: 25px;
+  right: 75px;
   z-index: 2;
   cursor: pointer;
 }
