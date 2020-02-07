@@ -8,8 +8,8 @@
   width: 100%;
   z-index: 1;
   &__Contents {
-    padding: 25px;
-    width: calc(100% - 50px);
+    padding: 100px 75px;
+    width: calc(100% - 150px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -33,6 +33,9 @@
         float: left;
         margin-right: 5px;
         vertical-align: middle;
+        @media (max-width: $tablet) {
+          height: 48px;
+        }
       }
     }
     .Nav {

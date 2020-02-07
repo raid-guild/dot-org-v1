@@ -1,14 +1,13 @@
 // Import Fonts from Google
-// -- Rubik
-@import url('https://fonts.googleapis.com/css?family=Rubik:100,200,300,400,500,700,900');
 // -- Display
-@import url('https://fonts.googleapis.com/css?family=Erica+One|Plaster|Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua&display=swap');
 // --  Data (Mono)
 
 // -- Body
+@import url('https://fonts.googleapis.com/css?family=Mirza:400,500,600,700&display=swap');
 
 // Palette
-$primary: #000;
+$primary: #ff3864;
 $primary-hover: lighten($primary, 5%);
 
 //Media Queries
@@ -16,17 +15,18 @@ $tablet: 768px;
 $phone: 480px;
 
 // Typography
-$body-font: 'Roboto', sans-serif;
-$heading-font: 'Rubik Mono One', sans-serif;
-$body-font-size: 21px;
+$body-font: 'Mirza', serif;
+$heading-font: 'Uncial Antiqua', serif;
+$body-font-size: 28px;
 
 // General Colors
-$body-color: grey;
-$headings-color: $primary;
-$link-color: blue;
+$body-color: white;
+$heading-color: $primary;
+$link-color: $primary;
 $background-light: white;
 $background-dark: black;
 
 // Layout
+$grid: 1200px;
 $base-padding: 50px;
 $base-margin: 15px;
