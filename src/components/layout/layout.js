@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../shared/header/header'
 import Footer from '../shared/footer/footer'
+import OgImg from '../../images/raidguild_org.png'
 
 import '../../styles/_globals.scss'
 
@@ -38,7 +39,33 @@ const Layout = ({ children }) => (
             { property: 'og:url', content: 'https://raidguild.org' },
             {
               property: 'og:image',
-              content: 'https://raidguild.org/static/raidguild_org.png',
+              content: { OgImg },
+            },
+            {
+              property: 'og:description',
+              content:
+                'A Decentralized Collective of Mercenaries Ready to Slay Your Web3 Product Demons',
+            },
+            {
+              property: 'og:type',
+              content: 'website',
+            },
+            {
+              name: 'twitter:card',
+              content: 'summary',
+            },
+            {
+              name: 'twitter:creator',
+              content: 'Raid Guild',
+            },
+            {
+              name: 'twitter:title',
+              content: 'Raid Guild',
+            },
+            {
+              name: 'twitter:description',
+              content:
+                'A Decentralized Collective of Mercenaries Ready to Slay Your Web3 Product Demons',
             },
           ]}
         >
