@@ -26,7 +26,7 @@
       position: relative;
       height: auto;
       margin-left: 50px;
-      color: white;
+      color: $primary;
       text-decoration: none;
       &:after {
         content: '';
@@ -67,7 +67,7 @@
 
 .TopNav__Mobile {
   position: fixed;
-  padding: 150px 75px 25px 25px;
+  padding: 100px 50px 25px 25px;
   top: 0px;
   right: 0px;
   width: 100%;
@@ -102,9 +102,9 @@
 
 .navbar__hamburger {
   position: absolute;
-  top: 125px;
+  top: 75px;
   transform: translateY(-50%);
-  right: 75px;
+  right: 50px;
   z-index: 2;
   cursor: pointer;
 }

@@ -4,15 +4,19 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout/layout'
 
 import RaidTeeImg from '../images/raid__fantasy--tee-technicolor.png'
-
-import DaohausLogo from '../images/projects/daohaus__logo--black.png'
-import PokemolLogo from '../images/projects/pokemol__brand--standard.png'
+import DaohausLogo from '../images/projects/daohaus__logo--white.png'
+import PokemolLogo from '../images/projects/pokemol__brand--invert.png'
 import MetaCartelLogo from '../images/projects/meta_chill.png'
 import MolochLogo from '../images/projects/moloch__logo--red.png'
 
+import IconHelm from '../components/shared/icons/IconHelm'
+import IconAxes from '../components/shared/icons/IconAxes'
+import IconCrown from '../components/shared/icons/IconCrown'
+import IconMagic from '../components/shared/icons/IconMagic'
+
 const IndexPage = () => (
   <Layout>
-    <div className="Hero Home BackgroundImage">
+    <div className="Hero Home BackgroundImage" name="home">
       <div className="Hero__Contents">
         <p>
           A Decentralized Collective of Mercenaries Ready to Slay Your Web3
@@ -42,8 +46,11 @@ const IndexPage = () => (
     <div className="Block Manifesto">
       <div className="Block__Contents" name="manifesto">
         <div className="Grid">
-          <div className="Column Column--50">
-            <img src={RaidTeeImg} />
+          <div
+            className="Column Column--50"
+            style={{ justifyContent: 'center' }}
+          >
+            <img src={RaidTeeImg} style={{ maxWidth: '400px' }} />
           </div>
 
           <div className="Column Column--50">
@@ -99,29 +106,67 @@ const IndexPage = () => (
             </a>
           </div>
 
-          <div className="Column Column--50"></div>
+          <div className="Column Column--50">
+            <div className="ServiceCards">
+              <div className="ServiceCards__Item">
+                <IconHelm />
+                <h3>Consultations</h3>
+                <p>
+                  Validate your ideas and get expert advice on how to build,
+                  ship and grow your product.
+                </p>
+              </div>
+              <div className="ServiceCards__Item">
+                <IconCrown />
+                <h3>Design Sprints</h3>
+                <p>
+                  Fine tune your product market fit and nail your UX before
+                  writing a single line of code.
+                </p>
+              </div>
+              <div className="ServiceCards__Item">
+                <IconAxes />
+                <h3>Full Stack Dev</h3>
+                <p>
+                  Make your dApp ideas a reality. From contracts to front ends,
+                  our Raiders are the best in the biz.
+                </p>
+              </div>
+              <div className="ServiceCards__Item">
+                <IconMagic />
+                <h3>Marketing</h3>
+                <p>
+                  Level up your meme game and build a compelling narrative for
+                  your brand / product.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
     <div className="Block Join">
       <div className="Block__Contents" name="join">
-        <h2>Join the Guild</h2>
-        <p>
-          We believe workers should be self-sovereign and able to work when,
-          where and how they want, as long as they create high value output.
-          We’re looking for top talent that can take things into their own hands
-          and bring unique value to the guild.{' '}
-        </p>
-        <a
-          className="Button"
-          href="https://raidguild.typeform.com/to/c0LjXo"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Join Us
-        </a>
+        <div className="Contain600">
+          <h2>Join the Guild</h2>
+          <p>
+            We believe workers should be self-sovereign and able to work when,
+            where and how they want, as long as they create high value output.
+            We’re looking for top talent that can take things into their own
+            hands and bring unique value to the guild.{' '}
+          </p>
+          <a
+            className="Button"
+            href="https://raidguild.typeform.com/to/c0LjXo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Join Us
+          </a>
+        </div>
         <div className="Grid">
           <div className="Column Column--33">
+            <IconHelm />
             <h4>Learn new things</h4>
             <p>
               Stay on top of the latest trends and developments while leveling
@@ -129,17 +174,19 @@ const IndexPage = () => (
             </p>
           </div>
           <div className="Column Column--33">
+            <IconAxes />
             <h4>Cartel Culture</h4>
             <p>
-              Some stuff about how dope everyone is and the awesome culture and
-              feeling of community.
+              We're serious about our work and its impacts on society, but we
+              also know how to have a good time.
             </p>
           </div>
           <div className="Column Column--33">
-            <h4>Change The World</h4>
+            <IconCrown />
+            <h4>Tip of the Spear</h4>
             <p>
-              This is the most exciting space to be working in. Join the ranks
-              on the front lines and make an impact.
+              Join the ranks on the front lines and make a direct impact on the
+              world around you.
             </p>
           </div>
         </div>
@@ -149,10 +196,14 @@ const IndexPage = () => (
       <div className="Block__Contents">
         <h1>Projects</h1>
         <div className="Portfolio__Images">
-          <img src={MetaCartelLogo} />
-          <img src={MolochLogo} />
-          <img src={DaohausLogo} />
-          <img src={PokemolLogo} />
+          <div className="Row1">
+            <img src={MetaCartelLogo} />
+            <img src={MolochLogo} />
+          </div>
+          <div className="Row2">
+            <img src={DaohausLogo} />
+            <img src={PokemolLogo} />
+          </div>
         </div>
       </div>
     </div>

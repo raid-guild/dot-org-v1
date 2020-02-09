@@ -9,6 +9,7 @@ body {
   padding: 0;
   line-height: 1.5;
   background: $background-dark;
+  font-weight: 400;
 }
 
 p {
@@ -17,6 +18,7 @@ p {
   font-size: $body-font-size;
   margin-top: $base-margin;
   margin-bottom: $base-margin;
+  font-weight: 400;
 }
 
 h1,
@@ -58,14 +60,21 @@ img {
   border: 2px solid $primary;
   color: $primary;
   background: transparent;
-  padding: 10px 15px;
+  padding: 10px 15px 0px;
   display: inline-block;
   vertical-align: middle;
   border-radius: 5px;
-  line-height: 32px;
+  font-size: 1em;
+  &:hover {
+    border: 2px solid $primary-hover;
+    color: $primary-hover;
+  }
   &.Filled {
     background: $primary;
     color: $background-dark;
+    &:hover {
+      background: $primary-hover;
+    }
   }
 }
 
@@ -79,12 +88,13 @@ img {
 .Hero {
   position: relative;
   width: 100%;
-  min-height: 95vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
   .HeroBorder {
+    top: 0;
     position: absolute;
     margin: 25px;
     width: calc(100% - 50px);
@@ -96,12 +106,12 @@ img {
     padding: $base-padding;
     padding-left: 150px;
     width: calc(100% - 100px);
+    height: calc(100% - 100px);
     h1 {
       font-size: 2.75em;
       color: $primary;
     }
-    p,
-    a {
+    p {
       font-size: 1.5em;
       color: $primary;
     }
@@ -118,8 +128,26 @@ img {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center right;
+    @media (min-width: 769px) and (max-width: 1201px) {
+      background-size: 50%;
+      background-position: bottom right;
+    }
+    @media (max-width: $tablet) {
+      background-position: center 75px;
+      justify-content: flex-start;
+      align-items: flex-end;
+      min-height: 765px;
+      .Hero__Contents {
+        padding-top: 150px;
+        padding-left: 50px;
+        p {
+          font-size: 0.85em;
+        }
+      }
+    }
   }
 }
+
 .Block {
   position: relative;
   &__Contents {
@@ -128,6 +156,9 @@ img {
     @media (max-width: $tablet) {
       width: calc(100% - 100px);
       padding: $base-padding;
+      p {
+        font-size: 0.75em;
+      }
     }
   }
 }
@@ -171,6 +202,12 @@ img {
 
 // Modifiers / Utils
 
+.Contain600 {
+  max-width: 800px;
+  margin: 25px auto 75px;
+  text-align: center;
+}
+
 .BackgroundImage {
   // background image
   background-size: cover;
@@ -182,13 +219,55 @@ img {
 
 .Hire {
   background-color: $primary;
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  h2 {
     color: black;
+  }
+  .Grid {
+    @media (max-width: 1500px) {
+      .Column--50 {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+.ServiceCards {
+  display: flex;
+  flex-wrap: wrap;
+  &__Item {
+    background-color: black;
+    padding: 15px;
+    width: calc(50% - 45px);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    &:nth-child(2n-1) {
+      margin-right: 15px;
+    }
+    h3 {
+      color: $primary;
+      font-size: 1em;
+      font-weight: normal;
+      margin-top: -15px;
+    }
+    p {
+      font-size: 0.75em;
+    }
+    @media (max-width: 900px) {
+      width: calc(100% - 30px);
+      &:nth-child(2n-1) {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+.Join {
+  .Column--33 {
+    text-align: center;
+    svg {
+      margin: 0 auto;
+    }
   }
 }
 
@@ -204,8 +283,29 @@ img {
   align-content: center;
   justify-content: center;
   flex-wrap: wrap;
-  img {
-    width: 240px;
-    height: auto;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  .Row1 {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    img {
+      width: auto;
+      height: 200px;
+    }
+  }
+  .Row2 {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    img {
+      width: auto;
+      height: 120px;
+    }
   }
 }
