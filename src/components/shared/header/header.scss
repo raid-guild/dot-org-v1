@@ -8,11 +8,15 @@
   width: 100%;
   z-index: 1;
   &__Contents {
-    padding: 100px 75px;
+    padding: 75px;
     width: calc(100% - 150px);
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    @media (max-width: $tablet) {
+      padding: 50px;
+      width: calc(100% - 100px);
+    }
     .Logo {
       color: $primary;
       width: 100%;
@@ -29,12 +33,12 @@
         }
       }
       img {
-        height: 80px;
+        max-height: 80px;
         float: left;
         margin-right: 5px;
         vertical-align: middle;
         @media (max-width: $tablet) {
-          height: 48px;
+          max-height: 48px;
         }
       }
     }
