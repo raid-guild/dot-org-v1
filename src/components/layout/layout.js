@@ -24,8 +24,22 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Raid Guild' },
-            { name: 'keywords', content: 'decentralized' },
+            {
+              name: 'description',
+              content:
+                'A Decentralized Collective of Mercenaries Ready to Slay Your Web3 Product Demons',
+            },
+            {
+              name: 'keywords',
+              content:
+                'decentralized, ethereum, software development, dao, metacartel',
+            },
+            { property: 'og:title', content: 'Raid Guild' },
+            { property: 'og:url', content: 'https://raidguild.org' },
+            {
+              property: 'og:image',
+              content: 'https://raidguild.org/static/raidguild_org.png',
+            },
           ]}
         >
           <html lang="en" />
