@@ -18,9 +18,6 @@ const TopNav = () => {
   return (
     <>
       <nav className="TopNav__Desktop">
-        <Link to={`/`} activeClassName="Active">
-          Home
-        </Link>
         <a href="#manifesto">Manifesto</a>
         <a href="#services">Services</a>
         <a href="#join">Join</a>
@@ -33,12 +30,15 @@ const TopNav = () => {
       </button>
       <div className={mobileNavClass}>
         <div className="TopNav__Mobile--Contents">
-          <Link to={`/`} onClick={toggleNav}>
-            Home
-          </Link>
-          <a href="#manifesto">Manifesto</a>
-          <a href="#services">Services</a>
-          <a href="#join">Join</a>
+          <a href="#manifesto" onClick={toggleNav}>
+            Manifesto
+          </a>
+          <a href="#services" onClick={toggleNav}>
+            Services
+          </a>
+          <a href="#join" onClick={toggleNav}>
+            Join
+          </a>
         </div>
       </div>
       {/* End Hamburger */}
