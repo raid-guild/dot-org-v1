@@ -7,13 +7,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'odyssy',
-        short_name: 'odyssy',
+        name: 'raid guild',
+        short_name: 'raid-guild',
         start_url: '/',
-        background_color: '#f4e659',
-        theme_color: '#261c46',
+        background_color: '#000',
+        theme_color: '#ff3864',
         display: 'minimal-ui',
-        icon: 'src/images/odyssy-icon.png',
+        icon: 'src/images/raidguild__icon.png',
       },
     },
     'gatsby-plugin-netlify',
