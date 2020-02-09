@@ -40,6 +40,32 @@ const Layout = ({ children }) => (
               property: 'og:image',
               content: 'https://raidguild.org/static/raidguild_org.png',
             },
+            {
+              property: 'og:description',
+              content:
+                'A Decentralized Collective of Mercenaries Ready to Slay Your Web3 Product Demons',
+            },
+            {
+              property: 'og:type',
+              content: 'website',
+            },
+            {
+              name: 'twitter:card',
+              content: 'summary',
+            },
+            {
+              name: 'twitter:creator',
+              content: 'Raid Guild',
+            },
+            {
+              name: 'twitter:title',
+              content: 'Raid Guild',
+            },
+            {
+              name: 'twitter:description',
+              content:
+                'A Decentralized Collective of Mercenaries Ready to Slay Your Web3 Product Demons',
+            },
           ]}
         >
           <html lang="en" />
