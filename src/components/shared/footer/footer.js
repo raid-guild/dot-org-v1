@@ -11,7 +11,6 @@ const Footer = ({ siteTitle }) => (
         <img src={Brand} alt="Brand" />
       </Link>
       <nav className="Nav">
-        <Link to={`/contact`}>Contact</Link>
         <a
           className="Nav__Link"
           href="https://twitter.com/RaidGuild"
