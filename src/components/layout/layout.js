@@ -39,8 +39,8 @@ const Layout = ({ children }) => (
             { property: 'og:url', content: 'https://raidguild.org' },
             {
               property: 'og:image',
-              content:
-                'https://raidguild.org/static/raidguild_org-70458853fac73303af445dff7b4f1fe8.png',
+              content: 'https://raidguild.org/images/raidguild_org.png',
+              // 'https://raidguild.org/static/raidguild_org-70458853fac73303af445dff7b4f1fe8.png',
             },
             {
               property: 'og:description',
