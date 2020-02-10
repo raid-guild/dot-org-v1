@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 
 import Header from '../shared/header/header'
 import Footer from '../shared/footer/footer'
-import OgImg from '../../images/raidguild_org.png'
 
 import '../../styles/_globals.scss'
 
@@ -40,7 +39,6 @@ const Layout = ({ children }) => (
             {
               property: 'og:image',
               content: 'https://raidguild.org/images/raidguild_org.png',
-              // 'https://raidguild.org/static/raidguild_org-70458853fac73303af445dff7b4f1fe8.png',
             },
             {
               property: 'og:description',
