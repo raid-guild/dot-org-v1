@@ -229,6 +229,15 @@ img {
       }
     }
   }
+  .Button {
+    color: black;
+    border-color: black;
+    margin-bottom: 20px;
+
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
 }
 
 .ServiceCards {
