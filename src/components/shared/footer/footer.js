@@ -27,6 +27,14 @@ const Footer = ({ siteTitle }) => (
         >
           Github
         </a>
+        <a
+          className="Nav__Link"
+          href="https://medium.com/raid-guild"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Medium
+        </a>
       </nav>
     </div>
   </div>

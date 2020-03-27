@@ -84,6 +84,19 @@ img {
   }
 }
 
+// Forms
+.Form {
+  padding: 25px;
+}
+iframe {
+  border: none !important;
+  .sharedFormField,
+  .formFieldAndSubmitContainer,
+  .formHeader {
+    background-color: #000 !important;
+  }
+}
+
 // Blocks
 .Hero {
   position: relative;
@@ -93,6 +106,9 @@ img {
   align-items: center;
   justify-content: flex-start;
   background-color: rgba(0, 0, 0, 0.85);
+  &.Sliver {
+    min-height: 230px;
+  }
   .HeroBorder {
     top: 0;
     position: absolute;
