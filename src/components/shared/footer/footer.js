@@ -35,6 +35,14 @@ const Footer = ({ siteTitle }) => (
         >
           Medium
         </a>
+        <a
+          className="Nav__Link"
+          href="https://handbook.raidguild.org"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Handbook
+        </a>
       </nav>
     </div>
   </div>
