@@ -23,22 +23,12 @@ const IndexPage = () => (
           Product Demons
         </p>
         <div className="ButtonGroup">
-          <a
-            className="Button Filled"
-            href="https://raidguild.typeform.com/to/t6Mumf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className="Button Filled" to="/hire">
             Hire Us
-          </a>
-          <a
-            className="Button"
-            href="https://raidguild.typeform.com/to/c0LjXo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          </Link>
+          <Link className="Button" to="/join">
             Join Us
-          </a>
+          </Link>
         </div>
       </div>
       <div className="HeroBorder" />
@@ -96,14 +86,9 @@ const IndexPage = () => (
               experience to turn your ideas into reality. We are lean to the
               core and deliver high quality results with quick turnarounds.
             </p>
-            <a
-              className="Button"
-              href="https://raidguild.typeform.com/to/t6Mumf"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link className="Button" to="/hire">
               Hire Us
-            </a>
+            </Link>
           </div>
 
           <div className="Column Column--50">
@@ -155,14 +140,9 @@ const IndexPage = () => (
             We’re looking for top talent that can take things into their own
             hands and bring unique value to the guild.{' '}
           </p>
-          <a
-            className="Button"
-            href="https://raidguild.typeform.com/to/c0LjXo"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link className="Button" to="/join">
             Join Us
-          </a>
+          </Link>
         </div>
         <div className="Grid">
           <div className="Column Column--33">
