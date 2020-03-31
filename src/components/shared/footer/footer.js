@@ -29,6 +29,15 @@ const Footer = ({ siteTitle }) => (
         </a>
         <a
           className="Nav__Link"
+          href="https://discord.gg/aSBzBha"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          Discord
+        </a>
+  
+        <a
+          className="Nav__Link"
           href="https://medium.com/raid-guild"
           rel="noopener noreferrer"
           target="_blank"
