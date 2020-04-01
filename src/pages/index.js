@@ -8,7 +8,7 @@ import DaohausLogo from '../images/projects/daohaus__logo--white.png'
 import PokemolLogo from '../images/projects/pokemol__brand--invert.png'
 import MetaCartelLogo from '../images/projects/meta_chill.png'
 import MolochLogo from '../images/projects/moloch__logo--red.png'
-import DragonQuestBanner from '../images/dragon_quest_banner.png'
+import DragonQuestBanner from 'https://raidguild.org/images/dragonquest-sponsor-03.png'
 
 import IconHelm from '../components/shared/icons/IconHelm'
 import IconAxes from '../components/shared/icons/IconAxes'
