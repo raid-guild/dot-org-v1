@@ -8,6 +8,7 @@ import DaohausLogo from '../images/projects/daohaus__logo--white.png'
 import PokemolLogo from '../images/projects/pokemol__brand--invert.png'
 import MetaCartelLogo from '../images/projects/meta_chill.png'
 import MolochLogo from '../images/projects/moloch__logo--red.png'
+import DragonQuestBanner from '../images/dragon_quest_banner.png'
 
 import IconHelm from '../components/shared/icons/IconHelm'
 import IconAxes from '../components/shared/icons/IconAxes'
@@ -66,6 +67,9 @@ const IndexPage = () => (
               together."
             </p>
           </div>
+          <img id='dragon_quest' src={DragonQuestBanner} alt='dragon_quest'></img>
+          <a href='https://hackathon.metacartel.org/' target="_blank" rel="noopener noreferrer"
+            style={{ border: '1px solid #ff3864', padding: '0.5em', borderRadius: '5px' }}>Enter the Dragon</a>
         </div>
       </div>
     </div>
