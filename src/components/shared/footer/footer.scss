@@ -29,6 +29,10 @@
       .Nav {
         width: 100%;
         text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
       }
       .Logo {
         max-width: 200px;
