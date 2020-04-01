@@ -63,13 +63,33 @@ const IndexPage = () => (
               community to learn and build from.
             </p>
             <p className="Quote">
-              "If you want to go fast, go alone. If you want to go far, go
-              together."
+              "If you want to go fast, go alone.
+              <br />
+              If you want to go far, go together."
             </p>
           </div>
-          <img id='dragon_quest' src={DragonQuestBanner} alt='dragon_quest'></img>
-          <a href='https://hackathon.metacartel.org/' target="_blank" rel="noopener noreferrer"
-            style={{ border: '1px solid #ff3864', padding: '0.5em', borderRadius: '5px' }}>Enter the Dragon</a>
+          <div className="Column FlexCenter">
+            <a
+              href="https://explorer.bounties.network/explorer?bounty_stage=active&platform=bounties-network&search=raid%20guild%20dragon%20quest"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                id="dragon_quest"
+                src={DragonQuestBanner}
+                alt="dragon_quest"
+                style={{ width: '100%', maxWidth: '600px' }}
+              />
+            </a>
+            <a
+              className="Button"
+              href="https://hackathon.metacartel.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enter the Dragon
+            </a>
+          </div>
         </div>
       </div>
     </div>
