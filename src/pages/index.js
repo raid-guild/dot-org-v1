@@ -8,7 +8,6 @@ import DaohausLogo from '../images/projects/daohaus__logo--white.png'
 import PokemolLogo from '../images/projects/pokemol__brand--invert.png'
 import MetaCartelLogo from '../images/projects/meta_chill.png'
 import MolochLogo from '../images/projects/moloch__logo--red.png'
-import DragonQuestBanner from 'https://raidguild.org/images/dragonquest-sponsor-03.png'
 
 import IconHelm from '../components/shared/icons/IconHelm'
 import IconAxes from '../components/shared/icons/IconAxes'
@@ -67,29 +66,7 @@ const IndexPage = () => (
               <br />
               If you want to go far, go together."
             </p>
-          </div>
-          <div className="Column FlexCenter">
-            <a
-              href="https://explorer.bounties.network/explorer?bounty_stage=active&platform=bounties-network&search=raid%20guild%20dragon%20quest"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                id="dragon_quest"
-                src={DragonQuestBanner}
-                alt="dragon_quest"
-                style={{ width: '100%', maxWidth: '600px' }}
-              />
-            </a>
-            <a
-              className="Button"
-              href="https://hackathon.metacartel.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enter the Dragon
-            </a>
-          </div>
+          </div>    
         </div>
       </div>
     </div>
