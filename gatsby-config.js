@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Raid Guild',
   },
+  pathPrefix: "/dot-org",
   plugins: [
     'gatsby-plugin-react-helmet',
     {
