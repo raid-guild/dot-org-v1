@@ -172,7 +172,7 @@ class HireUs extends React.Component {
   }
 
   submitData = async (priorities, skills) => {
-    await fetch('https://d06f537621f5.ngrok.io/hireus/airtable', {
+    await fetch('https://guild-keeper.herokuapp.com/hireus/airtable', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -206,7 +206,7 @@ class HireUs extends React.Component {
   startTransaction = async (priorities, skills) => {
     const DAI = new this.state.web3.eth.Contract(DAI_ABI, DAI_CONTRACT_ADDRESS)
     try {
-      fetch('https://d06f537621f5.ngrok.io/hireus/backup', {
+      fetch('https://guild-keeper.herokuapp.com/hireus/backup', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
