@@ -22,9 +22,6 @@
   "keywords": [
     "gatsby"
   ],
-  "browser": {
-    "electron": false
-  },
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
