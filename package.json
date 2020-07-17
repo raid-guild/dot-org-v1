@@ -3,6 +3,8 @@
   "description": "Odyssy Gatsby starter",
   "version": "1.0.0",
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "animate.css": "^4.1.0",
     "gatsby": "^2.18.16",
     "gatsby-plugin-manifest": "^2.2.34",
     "gatsby-plugin-netlify": "^2.1.30",
@@ -14,7 +16,8 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
-    "react-typeform-embed": "^0.2.1"
+    "react-typeform-embed": "^0.2.1",
+    "web3": "^1.2.9"
   },
   "keywords": [
     "gatsby"

@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.form {
+  height: 100vh;
+  background-color: white;
+  font-family: 'Mirza', cursive;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  color: black;
+  font-size: 1rem;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* SCROLL SNAP */
+  scroll-snap-align: center;
+}
+
+.booking-confirmed-section {
+  font-size: 1.5rem;
+  font-family: 'Mirza', cursive;
+}
+
+.arrows {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.disclaimer a,
+#submit-button {
+  font-family: 'Mirza', cursive;
+  font-size: 20px;
+  text-decoration: none;
+  color: #ff3864;
+  padding: 10px;
+  border: 5px solid #000;
+  border-radius: 5px;
+  background-color: #000;
+  margin-top: 30px;
+}
+
+.booking-confirmed-section a {
+  font-family: 'Mirza', cursive;
+  font-size: 30px;
+  text-decoration: none;
+  color: #ff3864;
+  padding: 10px;
+  border: 5px solid #000;
+  border-radius: 5px;
+  background-color: #000;
+  margin-top: 20px;
+}
+
+.disclaimer a:hover,
+.booking-confirmed-section a:hover,
+#submit-button:hover {
+  background-color: #ff3864;
+  color: #000;
+  cursor: pointer;
+}
+
+.MuiFormControl-root {
+  width: 60%;
+}
+
+@media only screen and (max-width: 450px) {
+  .MuiFormLabel-root {
+    font-size: 15px;
+  }
+  .MuiFormControl-root {
+    width: 80%;
+  }
+  .booking-confirmed-section img {
+    width: 200px;
+    height: auto;
+  }
+}
+
+/** Loading animation CSS **/
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 10px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #ff3864;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
