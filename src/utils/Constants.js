@@ -87,7 +87,7 @@ const CHECKBOX_SKILLS_OPTIONS = [
 ]
 
 const CHECKBOX_SPECS_OPTIONS = [
-  'Yes, I have detailed specs/requirements',
+  'Yes, I have detailed specs / requirements',
   'Yes, but need help defining the exact scope',
   'No, I want RaidGuild to help me define the spec',
 ]

@@ -55,10 +55,10 @@ function TextFieldSection({
         required={required}
         multiline={multiline}
         rows={rows}
-        onChange={event => handleChange(event, state_name)}
+        onChange={(event) => handleChange(event, state_name)}
         value={value}
         type={type}
-        onKeyPress={event => {
+        onKeyPress={(event) => {
           if (event.key === 'Enter') {
             window.location.hash = `#${sectionId + 1}`
             window.location.href = `#${sectionId + 1}`
@@ -67,7 +67,7 @@ function TextFieldSection({
       />
       {!initiated_transaction ? (
         <button id="submit-button" type="submit" onClick={validateData}>
-          Pay 0.5 DAI & Submit
+          Pay 0.1 DAI & Submit
         </button>
       ) : networkID !== '42' ? (
         <p
@@ -103,10 +103,10 @@ function TextFieldSection({
         required={required}
         multiline={multiline}
         rows={rows}
-        onChange={event => handleChange(event, state_name)}
+        onChange={(event) => handleChange(event, state_name)}
         value={value}
         type={type}
-        onKeyPress={event => {
+        onKeyPress={(event) => {
           if (event.key === 'Enter') {
             window.location.hash = `#${sectionId + 1}`
             window.location.href = `#${sectionId + 1}`

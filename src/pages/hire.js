@@ -80,7 +80,7 @@ class HireUs extends React.Component {
     base: '',
     // Data from input
     project_type: 'New Project',
-    specs: 'Yes, I have detailed specs/requirements',
+    specs: 'Yes, I have detailed specs / requirements',
     project_name: '',
     summary: '',
     checkbox: {
@@ -189,7 +189,7 @@ class HireUs extends React.Component {
         name: this.state.name,
         email: this.state.email,
         handle: this.state.handle,
-        link: this.state.handle,
+        link: this.state.link,
         completion_date: this.state.completion_date,
         about_guild: this.state.about_guild,
         to_know: this.state.to_know,
@@ -232,7 +232,7 @@ class HireUs extends React.Component {
       let result = await DAI.methods
         .transfer(
           '0xbeb3e32355a933501c247e2dbde6e6ca2489bf3d',
-          this.state.web3.utils.toWei('0.5')
+          this.state.web3.utils.toWei('0.1')
         )
         .send({
           from: this.state.accounts[0],
