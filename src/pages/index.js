@@ -40,7 +40,7 @@ const IndexPage = () => (
             className="Column Column--50"
             style={{ justifyContent: 'center' }}
           >
-            <img src={RaidTeeImg} style={{ maxWidth: '400px' }} alt="" />
+            <img src={RaidTeeImg} alt="" />
           </div>
 
           <div className="Column Column--50">
