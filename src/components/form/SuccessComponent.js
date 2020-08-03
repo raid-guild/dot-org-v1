@@ -4,7 +4,7 @@ import 'animate.css'
 
 import raidguild_crosses from '../../images/raidguild__icon.png'
 
-const SuccessComponent = () => {
+const SuccessComponent = props => {
   return (
     <section className="booking-confirmed-section ">
       <img
@@ -18,14 +18,14 @@ const SuccessComponent = () => {
         style={{ color: '#ff3864', margin: '20px' }}
         className="animate__animated animate__fadeInUp animate__delay-1s"
       >
-        Booking Confirmed!
+        Booking received!!
       </h3>
       <p
         style={{ maxWidth: '80%' }}
         className="animate__animated animate__fadeInUp animate__delay-3s"
       >
-        Your submission is successful! Our team will contact you in a few days.
-        Until then, check our newsletter!
+        {`Your transaction hash is ${props.hash}. Our team will contact you in a
+                few days once it's mined. Until then, check our newsletter!`}
       </p>
       <a
         href="https://scroll.raidguild.org/"

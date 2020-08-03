@@ -40,7 +40,7 @@ const IndexPage = () => (
             className="Column Column--50"
             style={{ justifyContent: 'center' }}
           >
-            <img src={RaidTeeImg} style={{ maxWidth: '400px' }} />
+            <img src={RaidTeeImg} style={{ maxWidth: '400px' }} alt="" />
           </div>
 
           <div className="Column Column--50">
@@ -66,7 +66,7 @@ const IndexPage = () => (
               <br />
               If you want to go far, go together."
             </p>
-          </div>    
+          </div>
         </div>
       </div>
     </div>
@@ -178,12 +178,12 @@ const IndexPage = () => (
         <h1>Projects</h1>
         <div className="Portfolio__Images">
           <div className="Row1">
-            <img src={MetaCartelLogo} />
-            <img src={MolochLogo} />
+            <img src={MetaCartelLogo} alt="" />
+            <img src={MolochLogo} alt="" />
           </div>
           <div className="Row2">
-            <img src={DaohausLogo} />
-            <img src={PokemolLogo} />
+            <img src={DaohausLogo} alt="" />
+            <img src={PokemolLogo} alt="" />
           </div>
         </div>
       </div>

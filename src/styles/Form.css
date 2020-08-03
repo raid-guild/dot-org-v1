@@ -76,6 +76,18 @@ section {
   width: 60%;
 }
 
+#date-label {
+  font-size: 25px;
+  color: #ff3864;
+}
+
+.react-datepicker-wrapper input {
+  font-size: 25px;
+  font-family: 'Mirza', cursive;
+  border: none;
+  border-bottom: 3px solid #ff3864;
+}
+
 @media only screen and (max-width: 450px) {
   .MuiFormLabel-root {
     font-size: 15px;
@@ -86,6 +98,12 @@ section {
   .booking-confirmed-section img {
     width: 200px;
     height: auto;
+  }
+  #date-label {
+    font-size: 15px;
+  }
+  .react-datepicker-wrapper input {
+    font-size: 15px;
   }
 }
 

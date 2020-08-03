@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles'
 
 import TextField from '@material-ui/core/TextField'
 
-import ArrowsComponet from './ArrowsComponent'
+import ArrowsComponent from './ArrowsComponent'
 
 const StyledTextField = withStyles({
   root: {
@@ -55,10 +55,10 @@ function TextFieldSection({
         required={required}
         multiline={multiline}
         rows={rows}
-        onChange={(event) => handleChange(event, state_name)}
+        onChange={event => handleChange(event, state_name)}
         value={value}
         type={type}
-        onKeyPress={(event) => {
+        onKeyPress={event => {
           if (event.key === 'Enter') {
             window.location.hash = `#${sectionId + 1}`
             window.location.href = `#${sectionId + 1}`
@@ -103,17 +103,17 @@ function TextFieldSection({
         required={required}
         multiline={multiline}
         rows={rows}
-        onChange={(event) => handleChange(event, state_name)}
+        onChange={event => handleChange(event, state_name)}
         value={value}
         type={type}
-        onKeyPress={(event) => {
+        onKeyPress={event => {
           if (event.key === 'Enter') {
             window.location.hash = `#${sectionId + 1}`
             window.location.href = `#${sectionId + 1}`
           }
         }}
       />
-      <ArrowsComponet sectionId={sectionId} />
+      <ArrowsComponent sectionId={sectionId} />
     </section>
   )
 }

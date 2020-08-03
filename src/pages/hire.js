@@ -11,8 +11,13 @@ import TextFieldSection from '../components/form/TextFieldSection'
 import CheckBoxSection from '../components/form/CheckBoxSection'
 import RadioSection from '../components/form/RadioSection'
 import SuccessComponent from '../components/form/SuccessComponent'
+import ArrowsComponent from '../components/form/ArrowsComponent'
+
+import DatePicker from 'react-datepicker'
 
 import { TEXT_FIELD_PROPS } from '../utils/Constants'
+
+import 'react-datepicker/dist/react-datepicker.css'
 
 import '../styles/Form.css'
 
@@ -67,17 +72,15 @@ const THEME = createMuiTheme({
 })
 
 //MAINNET
-const DAI_CONTRACT_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
-const DAI_ABI = require('../abi/DAI_ABI.json')
+// const DAI_CONTRACT_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+// const DAI_ABI = require('../abi/DAI_ABI.json')
 
 // KOVAN TESTNET
-// const DAI_CONTRACT_ADDRESS = "0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa";
-// const DAI_ABI = require("../abi/DAI_ABI.json");
+const DAI_CONTRACT_ADDRESS = '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa'
+const DAI_ABI = require('../abi/DAI_ABI.json')
 
 class HireUs extends React.Component {
   state = {
-    // Airtable Base
-    base: '',
     // Data from input
     project_type: 'New Project',
     specs: 'Yes, I have detailed specs / requirements',
@@ -97,7 +100,8 @@ class HireUs extends React.Component {
       Good: false,
     },
     link: '',
-    completion_date: '',
+    completion_date: new Date().toISOString().split('T')[0],
+    date_place_holder: new Date(),
     budget: '',
     name: '',
     email: '',
@@ -112,6 +116,11 @@ class HireUs extends React.Component {
     transaction_hash: '',
     snackbar_open: false,
     invalid_email: false,
+  }
+
+  dateHandler = date => {
+    let ISODate = new Date(date).toISOString().split('T')[0]
+    this.setState({ completion_date: ISODate, date_place_holder: date })
   }
 
   handleTextFieldChange = (event, name) => {
@@ -171,83 +180,48 @@ class HireUs extends React.Component {
     })
   }
 
-  submitData = async (priorities, skills) => {
-    await fetch('https://guild-keeper.herokuapp.com/hireus/airtable', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        project_name: this.state.project_name,
-        project_type: this.state.project_type,
-        summary: this.state.summary,
-        specs: this.state.specs,
-        skills_needed: skills,
-        priorities: priorities,
-        budget: parseInt(this.state.budget),
-        name: this.state.name,
-        email: this.state.email,
-        handle: this.state.handle,
-        link: this.state.link,
-        completion_date: this.state.completion_date,
-        about_guild: this.state.about_guild,
-        to_know: this.state.to_know,
-        transaction_hash: this.state.transaction_hash,
-      }),
-    })
-
-    this.setState({
-      booking_confirmed: true,
-      initiated_transaction: false,
-    })
-  }
-
   startTransaction = async (priorities, skills) => {
     const DAI = new this.state.web3.eth.Contract(DAI_ABI, DAI_CONTRACT_ADDRESS)
     try {
-      fetch('https://guild-keeper.herokuapp.com/hireus/backup', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          project_name: this.state.project_name,
-          project_type: this.state.project_type,
-          summary: this.state.summary,
-          specs: this.state.specs,
-          skills_needed: skills,
-          priorities: priorities,
-          budget: parseInt(this.state.budget),
-          name: this.state.name,
-          email: this.state.email,
-          handle: this.state.handle,
-          link: this.state.handle,
-          completion_date: this.state.completion_date,
-          about_guild: this.state.about_guild,
-          to_know: this.state.to_know,
-        }),
-      })
-      let result = await DAI.methods
+      await DAI.methods
         .transfer(
           '0xbeb3e32355a933501c247e2dbde6e6ca2489bf3d',
           this.state.web3.utils.toWei('0.1')
         )
         .send({
           from: this.state.accounts[0],
-          gasLimit: this.state.web3.utils.toHex(150000),
-          gasPrice: this.state.web3.utils.toHex(20000000000),
         })
-
-      this.setState(
-        {
-          transaction_hash: result.transactionHash,
-        },
-        () => {
-          this.submitData(priorities, skills)
-        }
-      )
+        .once('transactionHash', async hash => {
+          await fetch('https://guild-keeper.herokuapp.com/hireus/airtable', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              project_name: this.state.project_name,
+              project_type: this.state.project_type,
+              summary: this.state.summary,
+              specs: this.state.specs,
+              skills_needed: skills,
+              priorities: priorities,
+              budget: parseInt(this.state.budget),
+              name: this.state.name,
+              email: this.state.email,
+              handle: this.state.handle,
+              link: this.state.link,
+              completion_date: this.state.completion_date,
+              about_guild: this.state.about_guild,
+              to_know: this.state.to_know,
+              transaction_hash: hash,
+            }),
+          })
+          this.setState({
+            transaction_hash: hash,
+            booking_confirmed: true,
+            initiated_transaction: false,
+          })
+        })
     } catch (err) {
       this.setState({
         initiated_transaction: false,
@@ -310,8 +284,8 @@ class HireUs extends React.Component {
 
     if (!project_name) return (window.location.href = '#2')
     if (!summary) return (window.location.href = '#3')
-    if (skills.length == 0) return (window.location.href = '#5')
-    if (priorities.length == 0) return (window.location.href = '#6')
+    if (skills.length === 0) return (window.location.href = '#5')
+    if (priorities.length === 0) return (window.location.href = '#6')
     if (!budget) return (window.location.href = '#9')
     if (!name) return (window.location.href = '#10')
     if (!email) return (window.location.href = '#11')
@@ -343,7 +317,7 @@ class HireUs extends React.Component {
     return (
       <ThemeProvider theme={THEME}>
         {booking_confirmed ? (
-          <SuccessComponent />
+          <SuccessComponent hash={this.state.transaction_hash} />
         ) : (
           <div className="form">
             <DisclaimerSection />
@@ -382,6 +356,21 @@ class HireUs extends React.Component {
                     networkID={networkID}
                     validateData={this.validateData}
                   />
+                )
+              }
+              if (field.type === 'date') {
+                return (
+                  <section id={index + 1}>
+                    <label id="date-label">{field.label}</label>
+                    <DatePicker
+                      style={{ fontSize: '25px', color: '#ff3864' }}
+                      minDate={new Date()}
+                      dateFormat="yyyy/MM/dd"
+                      selected={this.state.date_place_holder}
+                      onChange={this.dateHandler}
+                    />
+                    <ArrowsComponent sectionId={index + 1} />
+                  </section>
                 )
               }
               if (field.type === 'checkbox') {

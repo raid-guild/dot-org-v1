@@ -43,9 +43,9 @@ const TEXT_FIELD_PROPS = [
   },
   {
     state_name: 'completion_date',
-    label: 'Desired date of Completion (DD/MM/YYYY)',
+    label: 'Desired date of Completion',
     required: false,
-    type: 'text',
+    type: 'date',
   },
   {
     state_name: 'budget',
