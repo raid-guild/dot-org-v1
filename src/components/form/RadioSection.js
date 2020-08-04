@@ -42,7 +42,7 @@ class RadioSection extends React.Component {
     return (
       <section id={sectionId}>
         <FormGroup
-          column
+          column="true"
           onKeyPress={event => {
             if (event.key === 'Enter') {
               window.location.hash = `#${sectionId + 1}`

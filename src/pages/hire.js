@@ -29,7 +29,6 @@ const THEME = createMuiTheme({
   overrides: {
     MuiFormControl: {
       root: {
-        // width: "60%",
         fontSize: '25px',
       },
     },
@@ -116,9 +115,10 @@ class HireUs extends React.Component {
     transaction_hash: '',
     snackbar_open: false,
     invalid_email: false,
+    invalid_priorities: false,
   }
 
-  dateHandler = date => {
+  handleDate = date => {
     let ISODate = new Date(date).toISOString().split('T')[0]
     this.setState({ completion_date: ISODate, date_place_holder: date })
   }
@@ -266,7 +266,7 @@ class HireUs extends React.Component {
 
   validateData = () => {
     let { summary, email, project_name, budget, name, checkbox } = this.state
-    let pattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    let pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     let priorities = []
     let skills = []
 
@@ -286,6 +286,12 @@ class HireUs extends React.Component {
     if (!summary) return (window.location.href = '#3')
     if (skills.length === 0) return (window.location.href = '#5')
     if (priorities.length === 0) return (window.location.href = '#6')
+    if (priorities.length === 3 || priorities.length === 1) {
+      this.setState({ snackbar_open: true, invalid_priorities: true })
+      return (window.location.href = '#6')
+    } else {
+      this.setState({ invalid_priorities: false })
+    }
     if (!budget) return (window.location.href = '#9')
     if (!name) return (window.location.href = '#10')
     if (!email) return (window.location.href = '#11')
@@ -296,7 +302,6 @@ class HireUs extends React.Component {
     } else {
       this.setState({ invalid_email: false }, () => {
         this.initTransaction(priorities, skills)
-        console.log(this.state)
       })
     }
   }
@@ -311,6 +316,7 @@ class HireUs extends React.Component {
       networkID,
       snackbar_open,
       invalid_email,
+      invalid_priorities,
       web3,
     } = this.state
 
@@ -331,7 +337,7 @@ class HireUs extends React.Component {
                     id={
                       field.label === 'Brief Summary'
                         ? 'outlined-multiline-static'
-                        : 'standard-basic'
+                        : field.state_name
                     }
                     variant={
                       field.label === 'Brief Summary' ? 'outlined' : 'standard'
@@ -360,14 +366,14 @@ class HireUs extends React.Component {
               }
               if (field.type === 'date') {
                 return (
-                  <section id={index + 1}>
+                  <section id={index + 1} key={index}>
                     <label id="date-label">{field.label}</label>
                     <DatePicker
                       style={{ fontSize: '25px', color: '#ff3864' }}
                       minDate={new Date()}
                       dateFormat="yyyy/MM/dd"
                       selected={this.state.date_place_holder}
-                      onChange={this.dateHandler}
+                      onChange={this.handleDate}
                     />
                     <ArrowsComponent sectionId={index + 1} />
                   </section>
@@ -420,7 +426,9 @@ class HireUs extends React.Component {
                 horizontal: 'left',
               }}
               message={
-                invalid_email
+                invalid_priorities
+                  ? 'Choose a max of two priorities.'
+                  : invalid_email
                   ? 'The email address provided is not valid!'
                   : !web3
                   ? 'Not a web3 browser! Install Metamask.'
