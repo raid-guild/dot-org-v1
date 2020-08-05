@@ -43,7 +43,7 @@ const IndexPage = () => (
             <img src={RaidTeeImg} alt="" />
           </div>
 
-          <div className="Column Column--50">
+          <div className="Column Column--50" id="manifesto">
             <h2>Manifesto</h2>
             <p>
               We believe that DAOs will power the future of work. Through the
@@ -73,7 +73,7 @@ const IndexPage = () => (
     <div className="Block Hire">
       <div className="Block__Contents" name="services">
         <div className="Grid">
-          <div className="Column Column--50">
+          <div className="Column Column--50" id="services">
             <h2>Our Services</h2>
             <p>
               RaidGuild is the premier design and dev agency of the Web3

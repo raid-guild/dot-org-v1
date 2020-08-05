@@ -24,8 +24,18 @@ const SuccessComponent = props => {
         style={{ maxWidth: '80%' }}
         className="animate__animated animate__fadeInUp animate__delay-3s"
       >
-        {`Your transaction hash is ${props.hash}. Our team will contact you in a
-                few days once it's mined. Until then, check our newsletter!`}
+        Your can view you transaction{' '}
+        <a
+          href={`https://kovan.etherscan.io/tx/${props.hash}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          id="hash-link"
+        >
+          here
+        </a>
+        <br />
+        Our team will contact you in a few days once it's mined. Until then,
+        check our newsletter!
       </p>
       <a
         href="https://scroll.raidguild.org/"

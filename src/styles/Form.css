@@ -72,6 +72,18 @@ section {
   cursor: pointer;
 }
 
+#hash-link {
+  color: #ff3864;
+  margin-top: 0;
+  padding: 0;
+  border: none;
+}
+
+#hash-link:hover {
+  background-color: #000;
+  text-decoration: underline;
+}
+
 .MuiFormControl-root {
   width: 60%;
 }
