@@ -192,6 +192,30 @@ class HireUs extends React.Component {
           from: this.state.accounts[0],
         })
         .once('transactionHash', async hash => {
+          await fetch('https://guild-keeper.herokuapp.com/hireus/mongo', {
+            method: 'POST',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              project_name: this.state.project_name,
+              project_type: this.state.project_type,
+              summary: this.state.summary,
+              specs: this.state.specs,
+              skills_needed: skills,
+              priorities: priorities,
+              budget: parseInt(this.state.budget),
+              name: this.state.name,
+              email: this.state.email,
+              handle: this.state.handle,
+              link: this.state.link,
+              completion_date: this.state.completion_date,
+              about_guild: this.state.about_guild,
+              to_know: this.state.to_know,
+              transaction_hash: hash,
+            }),
+          })
           await fetch('https://guild-keeper.herokuapp.com/hireus/airtable', {
             method: 'POST',
             headers: {
