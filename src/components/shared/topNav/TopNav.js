@@ -18,8 +18,8 @@ const TopNav = () => {
   return (
     <>
       <nav className="TopNav__Desktop">
-        <a href="/#manifesto">Manifesto</a>
-        <a href="/#services">Services</a>
+        <a href="#manifesto">Manifesto</a>
+        <a href="#services">Services</a>
         <Link to="/join">Join</Link>
         <Link to="/hire">Hire</Link>
       </nav>
