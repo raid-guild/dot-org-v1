@@ -8,7 +8,6 @@ import DaohausLogo from '../images/projects/daohaus__logo--white.png'
 import PokemolLogo from '../images/projects/pokemol__brand--invert.png'
 import MetaCartelLogo from '../images/projects/meta_chill.png'
 import MolochLogo from '../images/projects/moloch__logo--red.png'
-import DragonQuestBanner from 'https://raidguild.org/images/dragonquest-sponsor-03.png'
 
 import IconHelm from '../components/shared/icons/IconHelm'
 import IconAxes from '../components/shared/icons/IconAxes'
@@ -41,10 +40,10 @@ const IndexPage = () => (
             className="Column Column--50"
             style={{ justifyContent: 'center' }}
           >
-            <img src={RaidTeeImg} style={{ maxWidth: '400px' }} />
+            <img src={RaidTeeImg} alt="" />
           </div>
 
-          <div className="Column Column--50">
+          <div className="Column Column--50" id="manifesto">
             <h2>Manifesto</h2>
             <p>
               We believe that DAOs will power the future of work. Through the
@@ -68,35 +67,13 @@ const IndexPage = () => (
               If you want to go far, go together."
             </p>
           </div>
-          <div className="Column FlexCenter">
-            <a
-              href="https://explorer.bounties.network/explorer?bounty_stage=active&platform=bounties-network&search=raid%20guild%20dragon%20quest"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                id="dragon_quest"
-                src={DragonQuestBanner}
-                alt="dragon_quest"
-                style={{ width: '100%', maxWidth: '600px' }}
-              />
-            </a>
-            <a
-              className="Button"
-              href="https://hackathon.metacartel.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Enter the Dragon
-            </a>
-          </div>
         </div>
       </div>
     </div>
     <div className="Block Hire">
       <div className="Block__Contents" name="services">
         <div className="Grid">
-          <div className="Column Column--50">
+          <div className="Column Column--50" id="services">
             <h2>Our Services</h2>
             <p>
               RaidGuild is the premier design and dev agency of the Web3
@@ -201,12 +178,12 @@ const IndexPage = () => (
         <h1>Projects</h1>
         <div className="Portfolio__Images">
           <div className="Row1">
-            <img src={MetaCartelLogo} />
-            <img src={MolochLogo} />
+            <img src={MetaCartelLogo} alt="" />
+            <img src={MolochLogo} alt="" />
           </div>
           <div className="Row2">
-            <img src={DaohausLogo} />
-            <img src={PokemolLogo} />
+            <img src={DaohausLogo} alt="" />
+            <img src={PokemolLogo} alt="" />
           </div>
         </div>
       </div>
