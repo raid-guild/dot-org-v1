@@ -21,7 +21,7 @@ function DisclaimerSection() {
           color: 'white',
         }}
       >
-        You need to submit a 100 DAI tribute to the DAO at the end to complete
+        You need to submit a 300 DAI tribute to the DAO at the end to complete
         the consultation request. The tribute above goes to the DAO for the
         members time. These funds are used to improve the Guild and create free
         tooling and resources for the Ethereum community. Funding the DAO funds

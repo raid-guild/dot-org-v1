@@ -71,12 +71,12 @@ const THEME = createMuiTheme({
 })
 
 //MAINNET
-// const DAI_CONTRACT_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
-// const DAI_ABI = require('../abi/DAI_ABI.json')
+const DAI_CONTRACT_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
+const DAI_ABI = require('../abi/DAI_ABI.json')
 
 // KOVAN TESTNET
-const DAI_CONTRACT_ADDRESS = '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa'
-const DAI_ABI = require('../abi/DAI_ABI.json')
+// const DAI_CONTRACT_ADDRESS = '0x4F96Fe3b7A6Cf9725f59d353F723c1bDb64CA6Aa'
+// const DAI_ABI = require('../abi/DAI_ABI.json')
 
 class HireUs extends React.Component {
   state = {
@@ -186,7 +186,7 @@ class HireUs extends React.Component {
       await DAI.methods
         .transfer(
           '0xbeb3e32355a933501c247e2dbde6e6ca2489bf3d',
-          this.state.web3.utils.toWei('0.1')
+          this.state.web3.utils.toWei('300')
         )
         .send({
           from: this.state.accounts[0],
@@ -264,7 +264,7 @@ class HireUs extends React.Component {
       this.setState(
         { web3, accounts, networkID, initiated_transaction: true },
         () => {
-          return networkID === '42'
+          return networkID === '1'
             ? this.startTransaction(priorities, skills)
             : null
         }

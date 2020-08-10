@@ -67,9 +67,9 @@ function TextFieldSection({
       />
       {!initiated_transaction ? (
         <button id="submit-button" type="submit" onClick={validateData}>
-          Pay 0.1 DAI & Submit
+          Pay 300 DAI & Submit
         </button>
-      ) : networkID !== '42' ? (
+      ) : networkID !== '1' ? (
         <p
           style={{
             height: '50px',
@@ -78,7 +78,7 @@ function TextFieldSection({
             color: 'black',
           }}
         >
-          Switch to Kovan!
+          Switch to Mainnet!
         </p>
       ) : (
         <div>
