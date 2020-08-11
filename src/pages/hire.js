@@ -13,6 +13,8 @@ import RadioSection from '../components/form/RadioSection'
 import SuccessComponent from '../components/form/SuccessComponent'
 import ArrowsComponent from '../components/form/ArrowsComponent'
 
+import Layout from '../components/layout/layout'
+
 import DatePicker from 'react-datepicker'
 
 import { TEXT_FIELD_PROPS } from '../utils/Constants'
@@ -345,123 +347,127 @@ class HireUs extends React.Component {
     } = this.state
 
     return (
-      <ThemeProvider theme={THEME}>
-        {booking_confirmed ? (
-          <SuccessComponent hash={this.state.transaction_hash} />
-        ) : (
-          <div className="form">
-            <DisclaimerSection />
+      <Layout>
+        <ThemeProvider theme={THEME}>
+          {booking_confirmed ? (
+            <SuccessComponent hash={this.state.transaction_hash} />
+          ) : (
+            <div className="form">
+              <DisclaimerSection />
 
-            {TEXT_FIELD_PROPS.map((field, index) => {
-              if (field.type === 'text') {
-                return (
-                  <TextFieldSection
-                    key={index}
-                    state_name={field.state_name}
-                    id={
-                      field.label === 'Brief Summary'
-                        ? 'outlined-multiline-static'
-                        : field.state_name
-                    }
-                    variant={
-                      field.label === 'Brief Summary' ? 'outlined' : 'standard'
-                    }
-                    multiline={field.label === 'Brief Summary' ? true : false}
-                    rows={field.label === 'Brief Summary' ? 4 : 1}
-                    required={field.required}
-                    label={field.label}
-                    sectionId={index + 1}
-                    handleChange={(event, name) =>
-                      this.handleTextFieldChange(event, name)
-                    }
-                    value={this.state[field.state_name]}
-                    type={
-                      field.state_name === 'email'
-                        ? 'email'
-                        : field.state_name === 'budget'
-                        ? 'number'
-                        : 'text'
-                    }
-                    initiated_transaction={initiated_transaction}
-                    networkID={networkID}
-                    validateData={this.validateData}
-                  />
-                )
-              }
-              if (field.type === 'date') {
-                return (
-                  <section id={index + 1} key={index}>
-                    <label id="date-label">{field.label}</label>
-                    <DatePicker
-                      style={{ fontSize: '25px', color: '#ff3864' }}
-                      minDate={new Date()}
-                      dateFormat="yyyy/MM/dd"
-                      selected={this.state.date_place_holder}
-                      onChange={this.handleDate}
+              {TEXT_FIELD_PROPS.map((field, index) => {
+                if (field.type === 'text') {
+                  return (
+                    <TextFieldSection
+                      key={index}
+                      state_name={field.state_name}
+                      id={
+                        field.label === 'Brief Summary'
+                          ? 'outlined-multiline-static'
+                          : field.state_name
+                      }
+                      variant={
+                        field.label === 'Brief Summary'
+                          ? 'outlined'
+                          : 'standard'
+                      }
+                      multiline={field.label === 'Brief Summary' ? true : false}
+                      rows={field.label === 'Brief Summary' ? 4 : 1}
+                      required={field.required}
+                      label={field.label}
+                      sectionId={index + 1}
+                      handleChange={(event, name) =>
+                        this.handleTextFieldChange(event, name)
+                      }
+                      value={this.state[field.state_name]}
+                      type={
+                        field.state_name === 'email'
+                          ? 'email'
+                          : field.state_name === 'budget'
+                          ? 'number'
+                          : 'text'
+                      }
+                      initiated_transaction={initiated_transaction}
+                      networkID={networkID}
+                      validateData={this.validateData}
                     />
-                    <ArrowsComponent sectionId={index + 1} />
-                  </section>
-                )
-              }
-              if (field.type === 'checkbox') {
-                return (
-                  <CheckBoxSection
-                    key={index}
-                    name={field.label}
-                    sectionId={index + 1}
-                    checkedValue={checkbox}
-                    handleCheckBoxChange={event => {
-                      this.handleCheckBoxChange(event)
-                    }}
-                  />
-                )
-              }
-              if (field.type === 'radio') {
-                return field.state_name === 'project_type' ? (
-                  <RadioSection
-                    key={index}
-                    name={field.label}
-                    sectionId={index + 1}
-                    selectedValue={project_type}
-                    handleRadioChange={event => {
-                      this.handleProjectChange(event)
-                    }}
-                  />
-                ) : (
-                  <RadioSection
-                    key={index}
-                    name={field.label}
-                    sectionId={index + 1}
-                    selectedValue={specs}
-                    handleRadioChange={event => {
-                      this.handleSpecChange(event)
-                    }}
-                  />
-                )
-              }
-            })}
+                  )
+                }
+                if (field.type === 'date') {
+                  return (
+                    <section id={index + 1} key={index}>
+                      <label id="date-label">{field.label}</label>
+                      <DatePicker
+                        style={{ fontSize: '25px', color: '#ff3864' }}
+                        minDate={new Date()}
+                        dateFormat="yyyy/MM/dd"
+                        selected={this.state.date_place_holder}
+                        onChange={this.handleDate}
+                      />
+                      <ArrowsComponent sectionId={index + 1} />
+                    </section>
+                  )
+                }
+                if (field.type === 'checkbox') {
+                  return (
+                    <CheckBoxSection
+                      key={index}
+                      name={field.label}
+                      sectionId={index + 1}
+                      checkedValue={checkbox}
+                      handleCheckBoxChange={event => {
+                        this.handleCheckBoxChange(event)
+                      }}
+                    />
+                  )
+                }
+                if (field.type === 'radio') {
+                  return field.state_name === 'project_type' ? (
+                    <RadioSection
+                      key={index}
+                      name={field.label}
+                      sectionId={index + 1}
+                      selectedValue={project_type}
+                      handleRadioChange={event => {
+                        this.handleProjectChange(event)
+                      }}
+                    />
+                  ) : (
+                    <RadioSection
+                      key={index}
+                      name={field.label}
+                      sectionId={index + 1}
+                      selectedValue={specs}
+                      handleRadioChange={event => {
+                        this.handleSpecChange(event)
+                      }}
+                    />
+                  )
+                }
+              })}
 
-            <Snackbar
-              open={snackbar_open}
-              autoHideDuration={6000}
-              onClose={() => this.setState({ snackbar_open: false })}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              message={
-                invalid_priorities
-                  ? 'Choose a max of two priorities.'
-                  : invalid_email
-                  ? 'The email address provided is not valid!'
-                  : !web3
-                  ? 'Not a web3 browser! Install Metamask.'
-                  : 'User cancelled transaction!'
-              }
-            ></Snackbar>
-          </div>
-        )}
-      </ThemeProvider>
+              <Snackbar
+                open={snackbar_open}
+                autoHideDuration={6000}
+                onClose={() => this.setState({ snackbar_open: false })}
+                anchorOrigin={{
+                  vertical: 'bottom',
+                  horizontal: 'left',
+                }}
+                message={
+                  invalid_priorities
+                    ? 'Choose a max of two priorities.'
+                    : invalid_email
+                    ? 'The email address provided is not valid!'
+                    : !web3
+                    ? 'Not a web3 browser! Install Metamask.'
+                    : 'User cancelled transaction!'
+                }
+              ></Snackbar>
+            </div>
+          )}
+        </ThemeProvider>
+      </Layout>
     )
   }
 }
