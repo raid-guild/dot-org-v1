@@ -26,7 +26,7 @@ const SuccessComponent = props => {
       >
         Your can view you transaction{' '}
         <a
-          href={`https://kovan.etherscan.io/tx/${props.hash}`}
+          href={`https://etherscan.io/tx/${props.hash}`}
           target="_blank"
           rel="noopener noreferrer"
           id="hash-link"
