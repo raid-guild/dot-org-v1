@@ -21,11 +21,10 @@ function DisclaimerSection() {
           color: 'white',
         }}
       >
-        You need to submit a 300 DAI tribute to the DAO at the end to complete
-        the consultation request. The tribute above goes to the DAO for the
-        members time. These funds are used to improve the Guild and create free
-        tooling and resources for the Ethereum community. Funding the DAO funds
-        open-source and Ethereum Developement.
+        A RaidGuild submission require a 300 DAI tribute to set up a
+        consultation, this entitles you to a one hour call with the Guild and a
+        high level strategy document. These funds will contribute towards the
+        final budget of your project.
       </p>
       <a href="#1">Agree</a>
     </section>
