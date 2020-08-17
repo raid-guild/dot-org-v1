@@ -201,6 +201,7 @@ class HireUs extends React.Component {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+              key: process.env.GATSBY_ACCESS_KEY,
               project_name: this.state.project_name,
               project_type: this.state.project_type,
               summary: this.state.summary,
@@ -225,6 +226,7 @@ class HireUs extends React.Component {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+              key: process.env.GATSBY_ACCESS_KEY,
               project_name: this.state.project_name,
               project_type: this.state.project_type,
               summary: this.state.summary,
@@ -345,7 +347,6 @@ class HireUs extends React.Component {
       invalid_priorities,
       web3,
     } = this.state
-
     return (
       <Layout>
         <ThemeProvider theme={THEME}>
