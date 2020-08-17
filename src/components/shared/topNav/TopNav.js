@@ -20,6 +20,7 @@ const TopNav = () => {
       <nav className="TopNav__Desktop">
         <a href="/#manifesto">Manifesto</a>
         <a href="/#services">Services</a>
+        <a href="/portfolio">Portfolio</a>
         <Link to="/join">Join</Link>
         <Link to="/hire">Hire</Link>
       </nav>
