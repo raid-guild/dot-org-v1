@@ -57,7 +57,7 @@ const PortfolioPage = () => (
 						image={ImagePlaceholder}
 					/>
 					<PortfolioCard
-						projectName="Aragon Metrics Dashboard"
+						projectName="Aragon"
 						projectTags={['UI Design', 'Frontend Dev', 'Subgraph Dev']}
 						link="/case-study/tellor"
 						image={ImagePlaceholder}

@@ -49,6 +49,10 @@ a {
   }
 }
 
+code {
+  font-family: $code-font;
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -236,6 +240,19 @@ iframe {
   justify-content: center;
 }
 
+.PrimaryBG {
+  background-color: $primary;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+  }
+
+  svg path {
+    fill: black;
+  }
+
+}
+
 // Blocks
 
 .Hire {
@@ -339,6 +356,13 @@ iframe {
     }
   }
 }
+
+.OverEmbed {
+  z-index: 100;
+}
+
+// Portfolio & Case Studies
+
 .Portfolio__Cards {
   display: flex;
   flex-wrap: wrap;
@@ -405,7 +429,27 @@ iframe {
   background-position: center;
   transition: all .2s ease-in-out;
 }
+.CaseStudy {
+  p {
+    font-size: .75em;
+  }
+}
+.IconHeader {
+  display: flex;
+  align-items: center;
 
-.OverEmbed {
-  z-index: 100;
+  svg, img {
+    padding-right: .5em;
+  }
+  img {
+    height: 70px;
+  }
+}
+.SectionSeparator {
+  margin: 100px auto;
+
+  hr {
+    border-color: $transparent-white;
+  }
+
 }
