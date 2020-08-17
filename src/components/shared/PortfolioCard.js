@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const PortfolioCard = ({ projectName, projectTags, link, image }) => (
+const PortfolioCard = ({ projectName, projectTags, link, image }) =>
 	<Link to={link} className="Portfolio__Card">
 	  <div className="Portfolio__CardThumbnail">
-				<img src={image} />
+			<div className="Portfolio__ThumbnailImage" style={{backgroundImage: `url(${image})`}} ></div>
 	  </div>
 		<div className="Portfolio_CardContent">
 			<h6>{projectName}</h6>
@@ -13,6 +13,5 @@ const PortfolioCard = ({ projectName, projectTags, link, image }) => (
 			</div>
 		</div>
 	</Link>
-)
 
 export default PortfolioCard;
