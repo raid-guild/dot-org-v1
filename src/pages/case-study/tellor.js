@@ -8,6 +8,7 @@ import IconHelm from '../../components/shared/icons/IconHelm'
 import IconAxes from '../../components/shared/icons/IconAxes'
 import IconCrown from '../../components/shared/icons/IconCrown'
 import IconMagic from '../../components/shared/icons/IconMagic'
+import IconArrow from '../../components/shared/icons/IconArrow'
 import IconRaidGuild from '../../images/raidguild__icon.png'
 
 const TellorCaseStudyPage = () => (
@@ -46,7 +47,7 @@ const TellorCaseStudyPage = () => (
 		      </div>
 		    </div>
 				<div className="Block PrimaryBG">
-		      <div className="Block__Contents">
+		      <div className="Block__Contents Contain800">
 						<h2 className="IconHeader"><IconAxes /> Our Approach</h2>
 						<p>
 							We began the raid with a quick sprint to deeply understand the Tellor oracle system from a technical and brand level. With this understanding in place, we then ran simultaneous audits on the codebase and user experience. Through the process, we came up with many actionable directives to improve performance and usability of the Dispute Center and the Price Feed.
@@ -56,23 +57,52 @@ const TellorCaseStudyPage = () => (
 				<div className="Block">
 		      <div className="Block__Contents">
 						<div className="Grid">
-							<div className="Column Column--50" >
+							<div className="CaseStudy__List Column Column--50" >
 								<h4>Activities</h4>
-								<p>Usability Testing</p>
+								<span>UX Audit</span>
+								<span>Code Review</span>
+								<span>UI Design</span>
+								<span>Frontend Development</span>
+								<span>Backend Development</span>
 							</div>
-							<div className="Column Column--50">
+							<div className="CaseStudy__List Column Column--50">
 								<h4>Deliverables</h4>
-								<p>Full-Featured Web3 Application</p>
+								<span>2 Web3 Apps (Dispute Center, Price Feed)</span>
+								<span>Micro Style Guide</span>
 							</div>
 			      </div>
 						<div className="SectionSeparator">
 							<hr />
 						</div>
-						<h2 className="IconHeader"><img src={IconRaidGuild} /> Our Solution</h2>
-						<p>
-							We began the raid with a quick sprint to deeply understand the Tellor oracle system from a technical and brand level. With this understanding in place, we then ran simultaneous audits on the codebase and user experience. Through the process, we came up with many actionable directives to improve performance and usability of the Dispute Center and the Price Feed.
-						</p>
+						<div className="Contain800">
+							<h2 className="IconHeader"><img src={IconRaidGuild} /> Our Solution</h2>
+							<p> On the tech side, we replaced raw contract calls by building a custom subgraph which enhanced both experiences of the developers maintaining the data, and users fetching the data. </p>
+							<p> On the design side, we were able to greatly simplify the user experience through a combination of better information architecture and contextual micro-interactions. In the end, we expanded the Tellor visual language into a micro design system that works in light and dark mode, including a new custom loading animation to match.						</p>
+						</div>
 					</div>
+		    </div>
+				<div className="Block SecondaryBG">
+		      <div className="Block__Contents Contain800">
+						<h2 className="IconHeader"><IconMagic /> Results</h2>
+						<p>
+							We delivered two Web3 applications. One for their Dispute Center and another for the Price Feed.
+						</p>
+						<Link className="Button" to="https://disputes.tellorscan.com/">
+              View Final Product <IconArrow />
+            </Link>
+						<Link className="Button" to="https://github.com/tellor-io/tellorDisputeCenter">
+              View Codebase <IconArrow />
+            </Link>
+		      </div>
+		    </div>
+				<div className="Block">
+		      <div className="Block__Contents Contain800 TextCenter">
+						<h2 className="Secondary">Client Testimonial</h2>
+						<p>
+							"RaidGuild has been an amazing experience from start to finish, great guys in an awesome DAO and I'd highly recommend them for whatever the project"
+						</p>
+						<code className="tag"> - The Mandalore, Tellor.io </code>
+		      </div>
 		    </div>
 			</div>
     </Layout>

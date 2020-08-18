@@ -66,7 +66,7 @@ const IndexPage = () => (
               <br />
               If you want to go far, go together."
             </p>
-          </div>    
+          </div>
         </div>
       </div>
     </div>
@@ -133,7 +133,7 @@ const IndexPage = () => (
     </div>
     <div className="Block Join">
       <div className="Block__Contents" name="join">
-        <div className="Contain600">
+        <div className="Contain800">
           <h2>Join the Guild</h2>
           <p>
             We believe workers should be self-sovereign and able to work when,

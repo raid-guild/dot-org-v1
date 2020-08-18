@@ -9,6 +9,7 @@
 // Palette
 $primary: #ff3864;
 $primary-hover: lighten($primary, 5%);
+$secondary: #6153ff;
 
 //Media Queries
 $tablet: 768px;
@@ -26,7 +27,8 @@ $heading-color: $primary;
 $link-color: $primary;
 $background-light: white;
 $background-dark: black;
-$transparent-white: rgba(255,255,255,.5);
+$translucent-white: rgba(255,255,255,.5);
+$transparent-white: rgba(255,255,255,.2);
 
 // Layout
 $grid: 1200px;

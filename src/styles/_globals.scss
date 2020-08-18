@@ -51,6 +51,12 @@ a {
 
 code {
   font-family: $code-font;
+  &.tag {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: $translucent-white;
+  }
 }
 
 img {
@@ -85,6 +91,26 @@ img {
 .ButtonGroup {
   .Button:not(:last-child) {
     margin-right: 15px;
+  }
+}
+
+.SectionSeparator {
+  margin: 100px auto;
+  hr {
+    border-color: $transparent-white;
+    margin-right: -1000px;
+    margin-left: -1000px;
+  }
+}
+
+.IconHeader {
+  display: flex;
+  align-items: center;
+  svg, img {
+    padding-right: .5em;
+  }
+  img {
+    height: 70px;
   }
 }
 
@@ -183,7 +209,7 @@ iframe {
   }
 }
 
-// Elements
+// Layout
 .Row,
 .Grid {
   display: flex;
@@ -222,10 +248,10 @@ iframe {
 
 // Modifiers / Utils
 
-.Contain600 {
+.Contain800 {
   max-width: 800px;
-  margin: 25px auto 75px;
-  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .BackgroundImage {
@@ -240,17 +266,35 @@ iframe {
   justify-content: center;
 }
 
+.TextCenter {
+  text-align: center;
+}
+
 .PrimaryBG {
   background-color: $primary;
 
   h1, h2, h3, h4, h5, h6 {
-    color: black;
+    color: $background-dark;
   }
-
   svg path {
-    fill: black;
+    fill: $background-dark;
   }
+}
 
+.Secondary {
+  color: $secondary;
+}
+
+.SecondaryBG {
+  background-color: $secondary;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $background-dark;
+
+    svg path {
+      fill: $background-dark;
+    }
+  }
 }
 
 // Blocks
@@ -316,6 +360,10 @@ iframe {
       margin: 0 auto;
     }
   }
+  .Contain800 {
+    text-align: center;
+    margin: 25px auto 75px;
+  }
 }
 
 .Portfolio {
@@ -368,37 +416,34 @@ iframe {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .Portfolio__Card {
   flex-grow: 0;
   width: 30%;
   max-height: 320px;
-  border: 1px solid $transparent-white;
+  border: 1px solid $translucent-white;
   border-radius: 10px;
   margin: 8px;
   transition: all .2s ease-in-out;
-
   @media screen and (max-width: 768px) {
     width: 100%;
   }
-
   &:hover, &:active, &:focus {
     border: 1px solid white;
-
     h6 {
       color: white;
     }
-
     .Portfolio__ThumbnailImage {
       transform: scale(1.05);
       transition: all .2s ease-in-out;
     }
   }
 }
+
 .Portfolio_CardContent {
   display: flex;
   align-items: center;
   flex: 1;
-
   h6 {
     margin-left: 12px;
     transition: all .2s ease-in-out;
@@ -413,14 +458,13 @@ iframe {
   font-family: monospace;
   font-size: .3em;
   text-transform: uppercase;
-  color: $transparent-white;
+  color: $translucent-white;
 }
 .Portfolio__CardThumbnail {
   height: 200px;
   overflow: hidden;
   border-radius: 9px 9px 0 0;
 }
-
 .Portfolio__ThumbnailImage {
   height: 100%;
   width: 100%;
@@ -429,27 +473,34 @@ iframe {
   background-position: center;
   transition: all .2s ease-in-out;
 }
+
 .CaseStudy {
   p {
     font-size: .75em;
+  }.Button {
+    color: white;
+    border: 2px solid white;
+    margin-right: 20px;
+    svg {
+      padding-left: 20px;
+    }
+    &:hover, &:focus, &:active {
+      color: $secondary;
+      background-color: white;
+      border-color: white;
+      svg path {
+        fill: $secondary;
+      }
+    }
   }
 }
-.IconHeader {
-  display: flex;
-  align-items: center;
 
-  svg, img {
-    padding-right: .5em;
+.CaseStudy__List {
+  text-align: center;
+  h4 {
+    color: $secondary;
   }
-  img {
-    height: 70px;
+  span {
+    font-size: .75em;
   }
-}
-.SectionSeparator {
-  margin: 100px auto;
-
-  hr {
-    border-color: $transparent-white;
-  }
-
 }
