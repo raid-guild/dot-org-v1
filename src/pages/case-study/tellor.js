@@ -11,6 +11,11 @@ import IconMagic from '../../components/shared/icons/IconMagic'
 import IconArrow from '../../components/shared/icons/IconArrow'
 import IconRaidGuild from '../../images/raidguild__icon.png'
 
+import PixelArcher from '../../images/characters/archer.png'
+import PixelPaladin from '../../images/characters/paladin.png'
+
+import RaiderBox from '../../components/shared/cards/RaiderBox'
+
 const TellorCaseStudyPage = () => (
 	<Layout>
       <div className="Hero Portfolio BackgroundImage" name="portfolio">
@@ -36,12 +41,16 @@ const TellorCaseStudyPage = () => (
 		          </div>
 		          <div className="Column Column--50">
 		    				<h3>Raiders</h3>
-								<div className="CaseStudy__Raiders">
-									<div className="CaseStudy__RaiderCard">
-										<h6>Spencer</h6>
-										<code>product</code>
-									</div>
-								</div>
+								<RaiderBox
+									raiderName="Ven"
+									raiderRole="Design"
+									characterImage={PixelArcher}
+								/>
+								<RaiderBox
+									raiderName="Sam"
+									raiderRole="Full-Stack Dev"
+									characterImage={PixelPaladin}
+								/>
 		          </div>
 		        </div>
 		      </div>
@@ -56,6 +65,14 @@ const TellorCaseStudyPage = () => (
 		    </div>
 				<div className="Block">
 		      <div className="Block__Contents">
+						<div className="Contain800">
+							<h2 className="IconHeader"><img src={IconRaidGuild} /> Our Solution</h2>
+							<p> On the tech side, we replaced raw contract calls by building a custom subgraph which enhanced both experiences of the developers maintaining the data, and users fetching the data. </p>
+							<p> On the design side, we were able to greatly simplify the user experience through a combination of better information architecture and contextual micro-interactions. In the end, we expanded the Tellor visual language into a micro design system that works in light and dark mode, including a new custom loading animation to match.						</p>
+						</div>
+						<div className="SectionSeparator">
+							<hr />
+						</div>
 						<div className="Grid">
 							<div className="CaseStudy__List Column Column--50" >
 								<h4>Activities</h4>
@@ -71,14 +88,6 @@ const TellorCaseStudyPage = () => (
 								<span>Micro Style Guide</span>
 							</div>
 			      </div>
-						<div className="SectionSeparator">
-							<hr />
-						</div>
-						<div className="Contain800">
-							<h2 className="IconHeader"><img src={IconRaidGuild} /> Our Solution</h2>
-							<p> On the tech side, we replaced raw contract calls by building a custom subgraph which enhanced both experiences of the developers maintaining the data, and users fetching the data. </p>
-							<p> On the design side, we were able to greatly simplify the user experience through a combination of better information architecture and contextual micro-interactions. In the end, we expanded the Tellor visual language into a micro design system that works in light and dark mode, including a new custom loading animation to match.						</p>
-						</div>
 					</div>
 		    </div>
 				<div className="Block SecondaryBG">

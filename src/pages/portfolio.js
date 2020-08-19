@@ -15,7 +15,7 @@ import IconAxes from '../components/shared/icons/IconAxes'
 import IconCrown from '../components/shared/icons/IconCrown'
 import IconMagic from '../components/shared/icons/IconMagic'
 
-import PortfolioCard from '../components/shared/PortfolioCard'
+import PortfolioCard from '../components/shared/cards/PortfolioCard'
 
 const PortfolioPage = () => (
 	<Layout>

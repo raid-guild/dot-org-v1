@@ -7,6 +7,7 @@ import Header from '../shared/header/header'
 import Footer from '../shared/footer/footer'
 
 import '../../styles/_globals.scss'
+import '../../styles/portfolio.scss'
 
 const Layout = ({ children }) => (
   <StaticQuery
