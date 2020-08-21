@@ -84,6 +84,20 @@
   }
 }
 
+.CaseStudy .Hero__Contents {
+  h2 {
+    color: white;
+  }
+  p {
+    font-size: .75em;
+  }
+  padding-top: 100px;
+  padding-left: 100px;
+  @media screen and (max-width: 768px) {
+    padding-left: 50px;
+  }
+}
+
 .CaseStudy__List {
   text-align: center;
   h4 {
