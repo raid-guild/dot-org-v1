@@ -3,17 +3,7 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout/layout'
 
-import RaidTeeImg from '../images/raid__fantasy--tee-technicolor.png'
-import DaohausLogo from '../images/projects/daohaus__logo--white.png'
-import PokemolLogo from '../images/projects/pokemol__brand--invert.png'
-import MetaCartelLogo from '../images/projects/meta_chill.png'
-import MolochLogo from '../images/projects/moloch__logo--red.png'
 import ImagePlaceholder from '../images/image-placeholder.png'
-
-import IconHelm from '../components/shared/icons/IconHelm'
-import IconAxes from '../components/shared/icons/IconAxes'
-import IconCrown from '../components/shared/icons/IconCrown'
-import IconMagic from '../components/shared/icons/IconMagic'
 
 import PortfolioCard from '../components/shared/portfolio/PortfolioCard'
 
@@ -35,31 +25,31 @@ const PortfolioPage = () => (
 	        <PortfolioCard
 						projectName="Tellor"
 						projectTags={['Design', 'Full-Stack Dev']}
-						link="/case-study/tellor"
+						link="/case-studies/tellor"
 						image={ImagePlaceholder}
 					/>
 					<PortfolioCard
 						projectName="Minion"
 						projectTags={['UX/UI', 'Code Audit', 'Full-stack Dev']}
-						link="/case-study/tellor"
+						link="/case-studies/minion"
 						image={ImagePlaceholder}
 					/>
 					<PortfolioCard
 						projectName="Stake on Me"
 						projectTags={['UI/UX', 'Copywriting', 'Full-stack Dev']}
-						link="/case-study/tellor"
+						link="/case-studies/stakeonme"
 						image={ImagePlaceholder}
 					/>
 					<PortfolioCard
 						projectName="Wrapeth"
 						projectTags={['UI/UX', 'Visual Design', 'Full-stack Dev']}
-						link="/case-study/tellor"
+						link="/case-studies/wrapeth"
 						image={ImagePlaceholder}
 					/>
 					<PortfolioCard
 						projectName="Aragon"
 						projectTags={['UI Design', 'Frontend Dev', 'Subgraph Dev']}
-						link="/case-study/tellor"
+						link="/case-studies/aragon"
 						image={ImagePlaceholder}
 					/>
         </div>
