@@ -10,22 +10,6 @@ import IconArrow from '../icons/IconArrow'
 import IconRaidGuild from '../../../images/raidguild__icon.png'
 import RaiderBox from './RaiderBox'
 
-// const obj = {
-// 	keyName: 'value',
-// 	name: '',
-// 	time: 10,
-// 	isOpen: false,
-// 	daysOfTheWeek: ['one', 'two'],
-// 	person: {
-// 		hairColor: 'red',
-// 		relatives: [
-//
-// 		]
-// 	}
-// }
-
-// TODO: images into a map
-
 const CaseStudyPage = ({ caseStudy }) => (
 	<Layout>
 		<div className="CaseStudy">
@@ -97,18 +81,22 @@ const CaseStudyPage = ({ caseStudy }) => (
 					<a href={caseStudy.productLink} className="Button" rel="noopener noreferrer" target="_blank">
             View Final Product <IconArrow />
           </a>
-					<a href={caseStudy.codeLink} className="Button" rel="noopener noreferrer" target="_blank">
-            View Codebase <IconArrow />
-          </a>
+					{ caseStudy.codeLink &&
+						<a href={caseStudy.codeLink} className="Button" rel="noopener noreferrer" target="_blank">
+            	View Codebase <IconArrow />
+          	</a>
+					}
 	      </div>
 	    </div>
-			<div className="Block">
-	      <div className="Block__Contents Contain800 TextCenter">
-					<h2 className="Secondary">Client Testimonial</h2>
-					<p>{caseStudy.testimonial.text}</p>
-					<code className="tag"> - {caseStudy.testimonial.clientName}, {caseStudy.testimonial.orgName} </code>
-	      </div>
-	    </div>
+			{ caseStudy.testimonial &&
+				<div className="Block">
+	      	<div className="Block__Contents Contain800 TextCenter">
+						<h2 className="Secondary">Client Testimonial</h2>
+						<p>{caseStudy.testimonial.text}</p>
+						<code className="tag"> - {caseStudy.testimonial.clientName}, {caseStudy.testimonial.orgName} </code>
+		      </div>
+	    	</div>
+			}
 		</div>
   </Layout>
 )
