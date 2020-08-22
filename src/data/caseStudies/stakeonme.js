@@ -2,12 +2,11 @@ import PixelArcher from '../../images/characters/archer.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
 import PixelRanger from '../../images/characters/ranger.png'
-import TellorDeviceMockup from '../../images/tellor_device-mockup.png'
 
  export default {
 	projectName: 'Stake On Me',
 	projectHeadline: 'Design and build the frontend for a personal token launcher built on the meToken contracts.',
-	headerImage: TellorDeviceMockup,
+	headerImage: null,
 	challengeText: 'If you’ve ever seen an interface designed by a developer, then you know what we were looking at to start this raid. As the first deployed personal token interface, many assumptions were being made on possible use-cases, and refined direction for the MVP needed to be established.',
 	approachText: 'We started with an intentional UX Audit to explore and validate common use cases and interaction flows of personal tokens, as well as Guild tokens that are launched/owned by DAOs. With validated UX in hand, we split our efforts to simultaneously run the design tasks and setup of frontend.',
 	solutionTexts: [
@@ -33,7 +32,7 @@ import TellorDeviceMockup from '../../images/tellor_device-mockup.png'
 	raiders: [
 		{
 			name: 'Ven',
-			role: 'UX',
+			role: 'UX + Front-End',
 			image: PixelRanger,
 		},
 		{
@@ -48,7 +47,7 @@ import TellorDeviceMockup from '../../images/tellor_device-mockup.png'
 		},
     {
 			name: 'Darren',
-			role: 'Design, Copywriting',
+			role: 'Design + Copy',
 			image: PixelArcher,
 		},
 	],
