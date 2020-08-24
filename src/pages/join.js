@@ -13,7 +13,7 @@ const JoinPage = () => (
         <iframe
           title="join form"
           class="airtable-embed airtable-dynamic-height"
-          src="https://airtable.com/embed/shrrx58aCjZ6fW2Q3?backgroundColor=pink"
+          src="https://airtable.com/embed/shrwNmqjKS6Uat3Ao?backgroundColor=pink"
           frameborder="0"
           onmousewheel=""
           width="100%"
