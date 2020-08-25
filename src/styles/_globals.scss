@@ -49,6 +49,16 @@ a {
   }
 }
 
+code {
+  font-family: $code-font;
+  &.tag {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -81,6 +91,24 @@ img {
 .ButtonGroup {
   .Button:not(:last-child) {
     margin-right: 15px;
+  }
+}
+
+.SectionSeparator {
+  margin: 100px auto;
+  hr {
+    border-color: $transparent-white;
+  }
+}
+
+.IconHeader {
+  display: flex;
+  align-items: center;
+  svg, img {
+    padding-right: .5em;
+  }
+  img {
+    height: 70px;
   }
 }
 
@@ -179,7 +207,7 @@ iframe {
   }
 }
 
-// Elements
+// Layout
 .Row,
 .Grid {
   display: flex;
@@ -218,10 +246,10 @@ iframe {
 
 // Modifiers / Utils
 
-.Contain600 {
+.Contain800 {
   max-width: 800px;
-  margin: 25px auto 75px;
-  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .BackgroundImage {
@@ -234,6 +262,41 @@ iframe {
 .FlexCenter {
   align-items: center;
   justify-content: center;
+}
+
+.TextCenter {
+  text-align: center;
+}
+
+.TextRight {
+  text-align: right;
+}
+
+.PrimaryBG {
+  background-color: $primary;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $background-dark;
+  }
+  svg path {
+    fill: $background-dark;
+  }
+}
+
+.Secondary {
+  color: $secondary;
+}
+
+.SecondaryBG {
+  background-color: $secondary;
+
+  h1, h2, h3, h4, h5, h6 {
+    color: $background-dark;
+
+    svg path {
+      fill: $background-dark;
+    }
+  }
 }
 
 // Blocks
@@ -298,6 +361,10 @@ iframe {
     svg {
       margin: 0 auto;
     }
+  }
+  .Contain800 {
+    text-align: center;
+    margin: 25px auto 75px;
   }
 }
 
