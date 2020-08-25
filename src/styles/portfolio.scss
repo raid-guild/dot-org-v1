@@ -1,5 +1,15 @@
 @import 'variables';
 
+.Hero[name='portfolio'] {
+  background-size: 90%;
+  background-position: center right;
+  .Hero__Contents {
+    p {
+      max-width: 560px;
+    }
+  }
+}
+
 .Portfolio__Cards {
   display: flex;
   flex-wrap: wrap;
@@ -13,18 +23,20 @@
   border: 1px solid $translucent-white;
   border-radius: 10px;
   margin: 8px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   @media screen and (max-width: 768px) {
     width: 100%;
   }
-  &:hover, &:active, &:focus {
+  &:hover,
+  &:active,
+  &:focus {
     border: 1px solid white;
     h6 {
       color: white;
     }
     .Portfolio__ThumbnailImage {
       transform: scale(1.05);
-      transition: all .2s ease-in-out;
+      transition: all 0.2s ease-in-out;
     }
   }
 }
@@ -35,7 +47,7 @@
   flex: 1;
   h6 {
     margin-left: 12px;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 }
 .Portfolio_CardTags {
@@ -45,7 +57,7 @@
   align-items: flex-end;
   margin-right: 12px;
   font-family: monospace;
-  font-size: .3em;
+  font-size: 0.3em;
   text-transform: uppercase;
   color: $translucent-white;
 }
@@ -60,20 +72,23 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .CaseStudy {
   p {
-    font-size: .75em;
-  }.Button {
+    font-size: 0.75em;
+  }
+  .Button {
     color: white;
     border: 2px solid white;
     margin-right: 20px;
     svg {
       padding-left: 20px;
     }
-    &:hover, &:focus, &:active {
+    &:hover,
+    &:focus,
+    &:active {
       color: $secondary;
       background-color: white;
       border-color: white;
@@ -89,7 +104,7 @@
     color: white;
   }
   p {
-    font-size: .75em;
+    font-size: 0.75em;
   }
   padding-top: 100px;
   padding-left: 100px;
@@ -104,14 +119,14 @@
     color: $secondary;
   }
   span {
-    font-size: .75em;
+    font-size: 0.75em;
   }
 }
 
 .RaiderBox {
   border: 1px solid $translucent-white;
   border-radius: 8px;
-	margin-bottom: 20px;
+  margin-bottom: 20px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -124,7 +139,7 @@
     max-height: 50px;
   }
   code.tag {
-    font-size: .4em;
+    font-size: 0.4em;
   }
   :first-child {
     display: flex;

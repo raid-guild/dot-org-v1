@@ -20,7 +20,7 @@ const TopNav = () => {
       <nav className="TopNav__Desktop">
         <a href="/#manifesto">Manifesto</a>
         <a href="/#services">Services</a>
-        <a href="/portfolio">Portfolio</a>
+        <Link to="/portfolio">Portfolio</Link>
         <Link to="/join">Join</Link>
         <Link to="/hire">Hire</Link>
       </nav>
@@ -38,6 +38,9 @@ const TopNav = () => {
           <a href="/#services" onClick={toggleNav}>
             Services
           </a>
+          <Link to="/portfolio" onClick={toggleNav}>
+            Portfolio
+          </Link>
           <Link to="/join" onClick={toggleNav}>
             Join
           </Link>
