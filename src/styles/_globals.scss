@@ -149,7 +149,7 @@ iframe {
   &__Contents {
     padding: $base-padding;
     padding-left: 150px;
-    width: calc(100% - 100px);
+    // width: calc(100% - 100px);
     height: calc(100% - 100px);
     h1 {
       font-size: 2.75em;
@@ -195,10 +195,10 @@ iframe {
 .Block {
   position: relative;
   &__Contents {
-    width: calc(100% - 300px);
+    // width: calc(100% - 300px);
     padding: $base-padding * 3;
     @media (max-width: $tablet) {
-      width: calc(100% - 100px);
+      // width: calc(100% - 100px);
       padding: $base-padding;
       p {
         font-size: 0.75em;
@@ -347,7 +347,7 @@ iframe {
       font-size: 0.75em;
     }
     @media (max-width: 900px) {
-      width: calc(100% - 30px);
+      width: 100%;
       &:nth-child(2n-1) {
         margin-right: 0px;
       }
