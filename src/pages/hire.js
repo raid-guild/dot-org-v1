@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 
 import Web3 from 'web3'
 
@@ -6,7 +7,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 import Snackbar from '@material-ui/core/Snackbar'
 
-import DisclaimerSection from '../components/form/DisclaimerSection'
+// import DisclaimerSection from '../components/form/DisclaimerSection'
 import TextFieldSection from '../components/form/TextFieldSection'
 import CheckBoxSection from '../components/form/CheckBoxSection'
 import RadioSection from '../components/form/RadioSection'
@@ -293,6 +294,11 @@ class HireUs extends React.Component {
   }
 
   validateData = () => {
+    ReactGA.event({
+      category: 'Pay',
+      action: 'Action to pay for hiring the guild',
+    })
+
     let { summary, email, project_name, budget, name, checkbox } = this.state
     let pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     let priorities = []
@@ -332,6 +338,10 @@ class HireUs extends React.Component {
         this.initTransaction(priorities, skills)
       })
     }
+  }
+
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname)
   }
 
   render() {
