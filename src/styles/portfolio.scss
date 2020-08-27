@@ -62,11 +62,18 @@
   color: $translucent-white;
 }
 .Portfolio__CardThumbnail {
+  position: relative;
   height: 200px;
   overflow: hidden;
   border-radius: 9px 9px 0 0;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 .Portfolio__ThumbnailImage {
+  position: relative;
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -76,6 +83,22 @@
 }
 
 .CaseStudy {
+  .Video {
+    position: relative;
+    min-height: 800px;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .Hero {
+    position: relative;
+  }
+  video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
   p {
     font-size: 0.75em;
   }

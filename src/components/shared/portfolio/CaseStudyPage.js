@@ -81,6 +81,14 @@ const CaseStudyPage = ({ caseStudy }) => (
           </div>
         </div>
       </div>
+      {caseStudy.headerVideo ? (
+        <div className="Block Video">
+          <video autoPlay muted loop>
+            <source src={caseStudy.headerVideo} type="video/mp4" />
+            "Your browser does not support the video tag."
+          </video>
+        </div>
+      ) : null}
       <div className="Block SecondaryBG">
         <div className="Block__Contents Contain800">
           <h2 className="IconHeader">
