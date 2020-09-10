@@ -2,6 +2,7 @@ import PixelArcher from '../../images/characters/archer.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import TellorDeviceMockup from '../../images/portfolio/tellor_device-mockup.png'
 import headerImage from '../../images/portfolio/tellor-fullwidth.png'
+import videoSrc from '../../images/tellor-videomock.mp4'
 
 export default {
   id: 2,
@@ -9,6 +10,7 @@ export default {
   projectHeadline:
     'Design and build the Tellor Dispute Center, along with its Price Feed, for visual cohesion and to simplify both user and dev experience for ease of use and future maintainability.',
   headerImage: headerImage,
+  headerVideo: videoSrc,
   challengeText:
     'The first iteration of the Tellor Dispute Center functioned okay, but had its fair share of bugs, usability flaws, and was built in a way that made it hard to maintain and improve quickly. On the design side, there wasn’t really a fleshed out style guide to work with, so some visual design would be necessary.',
   approachText:

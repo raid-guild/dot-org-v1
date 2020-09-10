@@ -1,6 +1,7 @@
 import PixelArcher from '../../images/characters/archer.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
+import videoSrc from '../../images/wrapeth-videomock.mp4'
 
 export default {
   id: 3,
@@ -8,6 +9,7 @@ export default {
   projectHeadline:
     'Design and build a simple, fun interface for wrapping and unwrapping Eth.',
   headerImage: null,
+  headerVideo: videoSrc,
   challengeText:
     'DAOs, especially Moloch DAOs, use the hell out of wrapped Eth (wETH). Wrapping ETH into wETH converts it into a standard ERC-20 token that is cheaper to transact with and generally easier to work with across many smart contract interactions. There was no central interface to interact with and lots of folks were just using Etherscan :/. Some were even using Uniswap for its interface, which requires a trading fee.',
   approachText:

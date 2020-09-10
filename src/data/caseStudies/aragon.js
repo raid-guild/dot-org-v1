@@ -2,7 +2,7 @@ import PixelArcher from '../../images/characters/archer.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
 import PixelRanger from '../../images/characters/ranger.png'
-import videoSrc from '../../images/design-scroll.mp4'
+import videoSrc from '../../images/aragon-videomock.mp4'
 import headerImage from '../../images/portfolio/aragon-fullwidth.png'
 
 export default {

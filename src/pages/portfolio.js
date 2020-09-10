@@ -26,9 +26,15 @@ const PortfolioPage = () => (
           image={ImagePlaceholder}
         />
         <PortfolioCard
-          projectName="Minion"
-          projectTags={['UX/UI', 'Code Audit', 'Full-stack Dev']}
-          link="/case-studies/minion"
+          projectName="SBV"
+          projectTags={['UX/UI', 'Design', 'DAO Consult']}
+          link="/case-studies/sbv"
+          image={ImagePlaceholder}
+        />
+        <PortfolioCard
+          projectName="1UP World"
+          projectTags={['UX/UI', 'Design', 'Full-stack Dev']}
+          link="/case-studies/oneup"
           image={ImagePlaceholder}
         />
         <PortfolioCard
@@ -49,6 +55,12 @@ const PortfolioPage = () => (
           link="/case-studies/aragon"
           image={ImagePlaceholder}
         />
+{/*         <PortfolioCard
+          projectName="Minion"
+          projectTags={['UX/UI', 'Code Audit', 'Full-stack Dev']}
+          link="/case-studies/minion"
+          image={ImagePlaceholder}
+        /> */}
       </div>
     </div>
   </Layout>
