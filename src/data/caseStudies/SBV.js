@@ -1,6 +1,6 @@
 import PixelArcher from '../../images/characters/archer.png'
-import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
+import PixelMonk from '../../images/characters/monk.png'
 import videoSrc from '../../images/portfolio/sbv-videomock-medium.mp4'
 import videoSmallSrc from '../../images/portfolio/sbv-videomock-small.mp4'
 import headerImage from '../../images/portfolio/1up-displays-600.png'
@@ -39,7 +39,7 @@ export default {
     {
       name: 'Burrrata',
       role: 'Project Management',
-      image: PixelPaladin,
+      image: PixelMonk,
     },
   ],
   productLink: 'https://senaryblockchain.ventures/',

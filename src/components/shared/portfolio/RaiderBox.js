@@ -3,7 +3,9 @@ import React from 'react'
 const RaiderBox = ({ raiderName, raiderRole, characterImage }) => (
   <div className="RaiderBox">
     <div>
-      <img src={characterImage} alt="character type" />
+      <div className="ImageBox">
+        <img src={characterImage} alt="character type" />
+      </div>
       <p>{raiderName}</p>
     </div>
     <div className="TextRight">

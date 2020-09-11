@@ -1,7 +1,7 @@
 import PixelArcher from '../../images/characters/archer.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
-import PixelRanger from '../../images/characters/ranger.png'
+import PixelMonk from '../../images/characters/monk.png'
 import videoSrc from '../../images/portfolio/aragon-videomock-medium.mp4'
 import videoSmallSrc from '../../images/portfolio/aragon-videomock-small.mp4'
 import headerImage from '../../images/portfolio/aragon-displays-600.png'
@@ -50,8 +50,7 @@ export default {
     {
       name: 'proofoftom',
       role: 'Project Lead',
-      image: PixelRanger,
-      // Image needs update once we have a monk
+      image: PixelMonk,
     },
   ],
   productLink: 'https://stats.aragon.network/',

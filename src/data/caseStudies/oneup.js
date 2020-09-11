@@ -1,4 +1,5 @@
 import PixelArcher from '../../images/characters/archer.png'
+import PixelMonk from '../../images/characters/monk.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
 import videoSrc from '../../images/portfolio/oneup-videomock-medium.mp4'
@@ -40,12 +41,12 @@ export default {
     {
       name: 'Dekan',
       role: 'Development',
-      image: PixelWarrior,
+      image: PixelPaladin,
     },
     {
       name: 'Eric',
       role: 'Project Management',
-      image: PixelPaladin,
+      image: PixelMonk,
     },
   ],
   productLink: 'https://1up.world/',
