@@ -2,17 +2,20 @@ import PixelArcher from '../../images/characters/archer.png'
 import PixelPaladin from '../../images/characters/paladin.png'
 import PixelWarrior from '../../images/characters/warrior.png'
 import PixelRanger from '../../images/characters/ranger.png'
-import headerImage from '../../images/portfolio/stake-fullwidth.png'
-import videoSrc from '../../images/stakeonme-videomock.mp4'
-
+import videoSrc from '../../images/portfolio/stakeonme-videomock-medium.mp4'
+import videoSmallSrc from '../../images/portfolio/stakeonme-videomock-small.mp4'
+import headerImage from '../../images/portfolio/stake-displays-600.png'
+import videoScreen from '../../images/portfolio/stakeonme-3Dscreen.png'
 
 export default {
   id: 1,
   projectName: 'Stake On Me',
   projectHeadline:
     'Design and build the frontend for a personal token launcher built on the meToken contracts.',
+  cardImage: videoSmallSrc,
   headerImage: headerImage,
-  headerVideo: videoSrc,
+  fullVideo: videoSrc,
+  videoScreen: videoScreen,
   challengeText:
     'If you’ve ever seen an interface designed by a developer, then you know what we were looking at to start this raid. As the first deployed personal token interface, many assumptions were being made on possible use-cases, and refined direction for the MVP needed to be established.',
   approachText:

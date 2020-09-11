@@ -4,10 +4,10 @@ import { Link } from 'gatsby'
 const PortfolioCard = ({ projectName, projectTags, link, image }) => (
   <Link to={link} className="Portfolio__Card">
     <div className="Portfolio__CardThumbnail">
-      <div
-        className="Portfolio__ThumbnailImage"
-        style={{ backgroundImage: 'url(' + image + ')' }}
-      ></div>
+      <video autoPlay muted loop>
+        <source src={image} type="video/mp4" />
+        "Your browser does not support the video tag."
+      </video>
     </div>
     <div className="Portfolio_CardContent">
       <h6>{projectName}</h6>

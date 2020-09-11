@@ -33,6 +33,7 @@ const CaseStudyPage = ({ caseStudy }) => (
               <h5>Raiders</h5>
               {caseStudy.raiders.map(raider => (
                 <RaiderBox
+                  key={raider.name}
                   raiderName={raider.name}
                   raiderRole={raider.role}
                   characterImage={raider.image}
@@ -51,6 +52,12 @@ const CaseStudyPage = ({ caseStudy }) => (
           <p>{caseStudy.approachText}</p>
         </div>
       </div>
+      {caseStudy.videoScreen ? (
+        <div
+          className="Block BgImage"
+          style={{ backgroundImage: 'url(' + caseStudy.videoScreen + ')' }}
+        ></div>
+      ) : null}
       <div className="Block">
         <div className="Block__Contents">
           <div className="Contain800">
@@ -59,7 +66,7 @@ const CaseStudyPage = ({ caseStudy }) => (
               Our Solution
             </h2>
             {caseStudy.solutionTexts.map(solutionText => (
-              <p>{solutionText}</p>
+              <p key={solutionText}>{solutionText}</p>
             ))}
           </div>
           <div className="SectionSeparator">
@@ -69,22 +76,22 @@ const CaseStudyPage = ({ caseStudy }) => (
             <div className="CaseStudy__List Column Column--50">
               <h4>Activities</h4>
               {caseStudy.activitiesTexts.map(activitiesText => (
-                <span>{activitiesText}</span>
+                <span key={activitiesText}>{activitiesText}</span>
               ))}
             </div>
             <div className="CaseStudy__List Column Column--50">
               <h4>Deliverables</h4>
               {caseStudy.deliverablesTexts.map(deliverablesText => (
-                <span>{deliverablesText}</span>
+                <span key={deliverablesText}>{deliverablesText}</span>
               ))}
             </div>
           </div>
         </div>
       </div>
-      {caseStudy.headerVideo ? (
+      {caseStudy.fullVideo ? (
         <div className="Block Video">
           <video autoPlay muted loop>
-            <source src={caseStudy.headerVideo} type="video/mp4" />
+            <source src={caseStudy.fullVideo} type="video/mp4" />
             "Your browser does not support the video tag."
           </video>
         </div>
@@ -95,29 +102,31 @@ const CaseStudyPage = ({ caseStudy }) => (
             <IconMagic /> Results
           </h2>
           <p>{caseStudy.resultsText}</p>
-          <a
-            href={caseStudy.productLink}
-            className="Button"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            View Final Product <IconArrow />
-          </a>
-          {caseStudy.codeLink && (
+          <div className="ButtonGroup">
             <a
-              href={caseStudy.codeLink}
+              href={caseStudy.productLink}
               className="Button"
               rel="noopener noreferrer"
               target="_blank"
             >
-              View Codebase <IconArrow />
+              View Final Product <IconArrow />
             </a>
-          )}
+            {caseStudy.codeLink && (
+              <a
+                href={caseStudy.codeLink}
+                className="Button"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                View Codebase <IconArrow />
+              </a>
+            )}
+          </div>
         </div>
       </div>
       {caseStudy.testimonial && (
         <div className="Block">
-          <div className="Block__Contents Contain800 TextCenter">
+          <div className="Block__Contents Contain TextCenter">
             <h2 className="Secondary">Client Testimonial</h2>
             <p>{caseStudy.testimonial.text}</p>
             <code className="tag">

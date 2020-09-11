@@ -20,7 +20,14 @@ import IconMagic from '../components/shared/icons/IconMagic'
 const IndexPage = () => {
   const renderSlides = () => {
     return (
-      <Carousel autoplay={true} dots={true} effect="fade" autoplaySpeed={5000}>
+      <Carousel
+        autoplay={true}
+        dots={true}
+        controls={true}
+        effect="fade"
+        autoplaySpeed={5000}
+        dotPosition="bottom"
+      >
         {portfolioSlides.map(slide => {
           return (
             <div key={slide.id} className="Carousel__Slide">
@@ -31,12 +38,16 @@ const IndexPage = () => {
                   View Case Study
                 </Link>
               </div>
-              <div
-                className="SlideBg"
-                style={{
-                  backgroundImage: 'url(' + slide.caseStudy.headerImage + ')',
-                }}
-              />
+              <div className="SlideBg">
+                <video autoPlay muted loop>
+                  <source src={slide.caseStudy.cardImage} type="video/mp4" />
+                  "Your browser does not support the video tag."
+                </video>
+              </div>
+              {/* <div className="Carousel__Control">
+                <button onClick={next()}>Next</button>
+                <button onClick={prev()}>Prev</button>
+              </div> */}
               <div className="Overlay" />
             </div>
           )
@@ -106,6 +117,7 @@ const IndexPage = () => {
             <div className="Column">
               <h2>Our Portfolio</h2>
               <p>A Sampling of the Guild's completed raids.</p>
+              <Link to="/portfolio/">View All</Link>
             </div>
           </div>
         </div>

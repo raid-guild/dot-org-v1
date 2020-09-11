@@ -89,6 +89,11 @@ img {
 }
 
 .ButtonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  .Button {
+    display: inline-block;
+  }
   .Button:not(:last-child) {
     margin-right: 15px;
   }
@@ -104,8 +109,9 @@ img {
 .IconHeader {
   display: flex;
   align-items: center;
-  svg, img {
-    padding-right: .5em;
+  svg,
+  img {
+    padding-right: 0.5em;
   }
   img {
     height: 70px;
@@ -207,6 +213,12 @@ iframe {
   }
 }
 
+.Hire.Block {
+  a {
+    color: black;
+  }
+}
+
 // Layout
 .Row,
 .Grid {
@@ -248,6 +260,7 @@ iframe {
 
 .Contain800 {
   max-width: 800px;
+  width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
@@ -275,7 +288,12 @@ iframe {
 .PrimaryBG {
   background-color: $primary;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: $background-dark;
   }
   svg path {
@@ -290,7 +308,12 @@ iframe {
 .SecondaryBG {
   background-color: $secondary;
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: $background-dark;
 
     svg path {
