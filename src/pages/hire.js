@@ -295,19 +295,19 @@ class HireUs extends React.Component {
       }
     )
 
-    window.ethereum.on(
-      'networkChanged',
-      async function(networkID) {
-        this.setState({ networkID, initiated_transaction: false })
-      }.bind(this)
-    )
+    // window.ethereum.on(
+    //   'networkChanged',
+    //   async function(networkID) {
+    //     this.setState({ networkID, initiated_transaction: false })
+    //   }.bind(this)
+    // )
 
-    window.ethereum.on(
-      'accountsChanged',
-      async function(accounts) {
-        this.setState({ accounts })
-      }.bind(this)
-    )
+    // window.ethereum.on(
+    //   'accountsChanged',
+    //   async function(accounts) {
+    //     this.setState({ accounts })
+    //   }.bind(this)
+    // )
   }
 
   validateData = () => {
