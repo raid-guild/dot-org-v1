@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@walletconnect/web3-provider": "^1.2.2",
     "animate.css": "^4.1.0",
     "electron": "^9.1.2",
     "gatsby": "^2.24.3",
@@ -19,7 +20,8 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "react-typeform-embed": "^0.2.1",
-    "web3": "^1.2.9"
+    "web3": "^1.2.9",
+    "web3modal": "^1.9.1"
   },
   "keywords": [
     "gatsby"
