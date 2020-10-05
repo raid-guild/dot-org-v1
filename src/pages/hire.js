@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Web3 from 'web3'
+import Web3Modal from 'web3modal'
+import WalletConnectProvider from '@walletconnect/web3-provider'
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
@@ -70,6 +72,21 @@ const THEME = createMuiTheme({
       },
     },
   },
+})
+
+const providerOptions = {
+  walletconnect: {
+    package: WalletConnectProvider,
+    options: {
+      infuraId: process.env.GATSBY_INFURA_ID,
+    },
+  },
+}
+
+const web3Modal = new Web3Modal({
+  network: 'mainnet',
+  cacheProvider: false,
+  providerOptions,
 })
 
 //MAINNET
@@ -259,37 +276,37 @@ class HireUs extends React.Component {
   }
 
   initTransaction = async (priorities, skills) => {
-    if (typeof window.ethereum !== 'undefined') {
-      const web3 = new Web3(window.ethereum)
-      const accounts = await window.ethereum.enable()
-      let networkID = await web3.eth.net.getId()
-      networkID = networkID.toString()
+    web3Modal.clearCachedProvider()
 
-      this.setState(
-        { web3, accounts, networkID, initiated_transaction: true },
-        () => {
-          return networkID === '1'
-            ? this.startTransaction(priorities, skills)
-            : null
-        }
-      )
+    const provider = await web3Modal.connect()
+    const web3 = new Web3(provider)
+    const accounts = await web3.eth.getAccounts()
+    let networkID = await web3.eth.net.getId()
 
-      window.ethereum.on(
-        'networkChanged',
-        async function(networkID) {
-          this.setState({ networkID, initiated_transaction: false })
-        }.bind(this)
-      )
+    networkID = networkID.toString()
 
-      window.ethereum.on(
-        'accountsChanged',
-        async function(accounts) {
-          this.setState({ accounts })
-        }.bind(this)
-      )
-    } else {
-      this.setState({ snackbar_open: true })
-    }
+    this.setState(
+      { web3, accounts, networkID, initiated_transaction: true },
+      () => {
+        return networkID === '1'
+          ? this.startTransaction(priorities, skills)
+          : null
+      }
+    )
+
+    window.ethereum.on(
+      'networkChanged',
+      async function(networkID) {
+        this.setState({ networkID, initiated_transaction: false })
+      }.bind(this)
+    )
+
+    window.ethereum.on(
+      'accountsChanged',
+      async function(accounts) {
+        this.setState({ accounts })
+      }.bind(this)
+    )
   }
 
   validateData = () => {
