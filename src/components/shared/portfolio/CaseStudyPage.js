@@ -96,21 +96,13 @@ const CaseStudyPage = ({ caseStudy }) => (
           </video>
         </div>
       ) : null}
-      <div className="Block SecondaryBG">
+      <div className="Block Results SecondaryBG">
         <div className="Block__Contents Contain800">
           <h2 className="IconHeader">
             <IconMagic /> Results
           </h2>
           <p>{caseStudy.resultsText}</p>
           <div className="ButtonGroup">
-            <a
-              href={caseStudy.productLink}
-              className="Button"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              View Final Product <IconArrow />
-            </a>
             {caseStudy.codeLink && (
               <a
                 href={caseStudy.codeLink}
@@ -121,6 +113,14 @@ const CaseStudyPage = ({ caseStudy }) => (
                 View Codebase <IconArrow />
               </a>
             )}
+            <a
+              href={caseStudy.productLink}
+              className="Button"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              View Final Product <IconArrow />
+            </a>
           </div>
         </div>
       </div>

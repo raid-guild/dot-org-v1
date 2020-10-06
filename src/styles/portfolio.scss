@@ -133,10 +133,27 @@
   }
 }
 
+.Block.Results {
+  .Block__Contents {
+    padding: 150px 50px;
+  }
+}
+
 .ButtonGroup {
+  flex-wrap: wrap;
   .Button {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-basis: 40%;
+    svg {
+      margin-left: 10px;
+      margin-top: -10px;
+    }
+    @media (max-width: $grid) {
+      flex-basis: 100%;
+      margin-bottom: 15px;
+    }
   }
 }
 
