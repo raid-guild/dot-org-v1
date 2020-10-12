@@ -506,7 +506,7 @@ class HireUs extends React.Component {
                     : !web3
                     ? 'Not a web3 browser! Install Metamask.'
                     : insufficient_dai
-                    ? 'not enough DAI funds'
+                    ? 'Not enough DAI in wallet!'
                     : 'User cancelled transaction!'
                 }
               ></Snackbar>
