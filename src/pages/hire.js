@@ -206,13 +206,15 @@ class HireUs extends React.Component {
 
     const balance = await DAI.methods.balanceOf(this.state.accounts[0]).call()
 
-    if (parseInt(balance) < 300) {
+    if (!isNaN(parseInt(balance)) && parseInt(balance) < 300) {
       this.setState({
         initiated_transaction: false,
         insufficient_dai: true,
         snackbar_open: true,
       })
       return;
+    } else {
+      this.setState({initiated_transaction: true});
     }
 
     try {
@@ -300,7 +302,7 @@ class HireUs extends React.Component {
     networkID = networkID.toString()
 
     this.setState(
-      { web3, accounts, networkID, initiated_transaction: true },
+      { web3, accounts, networkID },
       () => {
         return networkID === '1'
           ? this.startTransaction(priorities, skills)
