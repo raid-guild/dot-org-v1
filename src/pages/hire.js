@@ -136,6 +136,7 @@ class HireUs extends React.Component {
     snackbar_open: false,
     invalid_email: false,
     invalid_priorities: false,
+    insufficient_dai: false
   }
 
   handleDate = date => {
@@ -202,6 +203,20 @@ class HireUs extends React.Component {
 
   startTransaction = async (priorities, skills) => {
     const DAI = new this.state.web3.eth.Contract(DAI_ABI, DAI_CONTRACT_ADDRESS)
+
+    const balance = await DAI.methods.balanceOf(this.state.accounts[0]).call()
+
+    if (!isNaN(parseInt(balance)) && parseInt(balance) < 300) {
+      this.setState({
+        initiated_transaction: false,
+        insufficient_dai: true,
+        snackbar_open: true,
+      })
+      return;
+    } else {
+      this.setState({initiated_transaction: true});
+    }
+
     try {
       await DAI.methods
         .transfer(
@@ -287,7 +302,7 @@ class HireUs extends React.Component {
     networkID = networkID.toString()
 
     this.setState(
-      { web3, accounts, networkID, initiated_transaction: true },
+      { web3, accounts, networkID },
       () => {
         return networkID === '1'
           ? this.startTransaction(priorities, skills)
@@ -372,6 +387,7 @@ class HireUs extends React.Component {
       snackbar_open,
       invalid_email,
       invalid_priorities,
+      insufficient_dai,
       web3,
     } = this.state
     return (
@@ -489,6 +505,8 @@ class HireUs extends React.Component {
                     ? 'The email address provided is not valid!'
                     : !web3
                     ? 'Not a web3 browser! Install Metamask.'
+                    : insufficient_dai
+                    ? 'Not enough DAI in wallet!'
                     : 'User cancelled transaction!'
                 }
               ></Snackbar>
