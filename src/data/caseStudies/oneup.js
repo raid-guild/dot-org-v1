@@ -10,14 +10,14 @@ import videoScreen from '../../images/portfolio/oneup-3Dscreen.png'
 export default {
   id: 3,
   projectName: '1Up World',
-  projectHeadline: 'web3 App Design',
+  projectHeadline: '1UP World provides community tracking as an MMO coordination game. Giving a 1UP helps track value added activities within your community via a Discord or Telegram chat bot.',
   cardImage: videoSmallSrc,
   headerImage: headerImage,
   fullVideo: videoSrc,
   videoScreen: videoScreen,
-  challengeText: '...',
-  approachText: '...',
-  solutionTexts: ['...'],
+  challengeText: 'For over a year, the MetaCartel community tracked internal contribution via a homemade web3 game called Pepper4D. The challenge of 1UP World was to upgrade the game into a format any community could use.',
+  approachText: 'The team for this project would need both development and product design, which came from veteran web3 experts Sam, Dekan and Darren. The original creator of Pepper4D, Eric, would act as our Project Manager.',
+  solutionTexts: ['The solution was to create a retro game-like interface which could be connected with any Discord or Telegram channel to provide a scoreboard of 1UPs. Using emojis or simple commands, any community member could recognize another by giving them a 1UP. Each month, players could claim their 1UPs as an on-chain currency through a DAO Stack DAO.'],
   activitiesTexts: [
     'UX/UI Design',
     'Visual Design',
