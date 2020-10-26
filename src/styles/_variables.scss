@@ -2,21 +2,24 @@
 // -- Display
 @import url('https://fonts.googleapis.com/css?family=Uncial+Antiqua&display=swap');
 // --  Data (Mono)
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 // -- Body
 @import url('https://fonts.googleapis.com/css?family=Mirza:400,500,600,700&display=swap');
 
 // Palette
 $primary: #ff3864;
 $primary-hover: lighten($primary, 5%);
+$secondary: #6153ff;
 
 //Media Queries
+$laptop: 1024px;
 $tablet: 768px;
 $phone: 480px;
 
 // Typography
 $body-font: 'Mirza', serif;
 $heading-font: 'Uncial Antiqua', serif;
+$code-font: 'Space Mono', monospace;
 $body-font-size: 28px;
 
 // General Colors
@@ -25,6 +28,8 @@ $heading-color: $primary;
 $link-color: $primary;
 $background-light: white;
 $background-dark: black;
+$translucent-white: rgba(255, 255, 255, 0.5);
+$transparent-white: rgba(255, 255, 255, 0.2);
 
 // Layout
 $grid: 1200px;
