@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react'
 import ReactGA from 'react-ga'
 import { Link } from 'gatsby'
+import { Carousel } from 'antd'
 
 import Layout from '../components/layout/layout'
+import '../styles/carousel.scss'
+import { portfolioSlides } from '../data/caseStudies/portfolioSlides'
 
 import RaidTeeImg from '../images/raid__fantasy--tee-technicolor.png'
 import DaohausLogo from '../images/projects/daohaus__logo--white.png'
@@ -16,6 +19,43 @@ import IconCrown from '../components/shared/icons/IconCrown'
 import IconMagic from '../components/shared/icons/IconMagic'
 
 const IndexPage = () => {
+  const renderSlides = () => {
+    return (
+      <Carousel
+        autoplay={true}
+        dots={true}
+        controls={true}
+        effect="fade"
+        autoplaySpeed={5000}
+        dotPosition="bottom"
+      >
+        {portfolioSlides.map(slide => {
+          return (
+            <div key={slide.id} className="Carousel__Slide">
+              <div className="Content">
+                <h4>{slide.caseStudy.projectName}</h4>
+                <p>{slide.caseStudy.projectHeadline}</p>
+                <Link className="Button" to={slide.caseStudy.link}>
+                  View Case Study
+                </Link>
+              </div>
+              <div className="SlideBg">
+                <video autoPlay muted loop>
+                  <source src={slide.caseStudy.cardImage} type="video/mp4" />
+                  "Your browser does not support the video tag."
+                </video>
+              </div>
+              {/* <div className="Carousel__Control">
+                <button onClick={next()}>Next</button>
+                <button onClick={prev()}>Prev</button>
+              </div> */}
+              <div className="Overlay" />
+            </div>
+          )
+        })}
+      </Carousel>
+    )
+  }
   useEffect(() => {
     ReactGA.initialize(process.env.GATSBY_GA_ID)
     ReactGA.pageview(window.location.pathname)
@@ -76,6 +116,18 @@ const IndexPage = () => {
           </div>
         </div>
       </div>
+      <div className="Block Hire">
+        <div className="Block__Contents" name="portfolio">
+          <div className="Grid">
+            <div className="Column">
+              <h2>Our Portfolio</h2>
+              <p>A Sampling of the Guild's completed raids.</p>
+              <Link to="/portfolio/">View All</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="Carousel">{renderSlides()}</div>
       <div className="Block Hire">
         <div className="Block__Contents" name="services">
           <div className="Grid">

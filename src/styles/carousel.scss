@@ -1,0 +1,196 @@
+@import 'variables';
+
+// Ant-D Components
+
+// Carousel
+
+.ant-carousel {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-variant: tabular-nums;
+  list-style: none;
+  -webkit-font-feature-settings: 'tnum';
+  font-feature-settings: 'tnum', 'tnum';
+  // Modify
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  .slick-slider {
+    position: relative;
+    display: block;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+  .slick-list {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    // extra
+    transform: translate3d(0, 0, 0);
+
+    .slick-track {
+      position: relative;
+      top: 0;
+      left: 0;
+      display: block;
+      height: 100%;
+      &:before {
+        display: table;
+        content: '';
+      }
+      .slick-slide {
+        position: relative;
+        float: left;
+        height: 100%;
+        min-height: 1px;
+        width: 100%;
+      }
+    }
+  }
+  .slick-dots {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 15;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    list-style: none;
+    &-bottom {
+      bottom: 24px;
+    }
+    li {
+      position: relative;
+      display: inline-block;
+      flex: 0 1 auto;
+      box-sizing: content-box;
+      width: 48px;
+      margin: 0 8px;
+      text-align: center;
+      vertical-align: top;
+      height: 8px;
+      padding: 0;
+      transition: all 0.5s linear;
+      &.slick-active button {
+        opacity: 1;
+      }
+      button {
+        display: block;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        font-size: 0;
+        background-color: #fff;
+        border: 0;
+        border-radius: 1px;
+        outline: none;
+        cursor: pointer;
+        opacity: 0.3;
+        transition: all 0.25s linear;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.Carousel {
+  position: relative;
+  width: 100%;
+  min-height: 800px;
+  height: auto;
+  .Overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+  }
+  &__Slide {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    .SlideBg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .Content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+      z-index: 3;
+      height: 100%;
+      h4 {
+        font-size: 2.5em;
+      }
+      p {
+        //font-family: $heading-font;
+        //line-height: 1.35em;
+        font-size: 1.5em;
+      }
+      .Button {
+        font-size: 1.5em;
+      }
+    }
+  }
+  @media (max-width: $grid) {
+    width: 100%;
+    min-height: 420px;
+    .Content {
+      h4 {
+        font-size: 1.5em;
+      }
+      p {
+        font-size: 1.25em;
+      }
+    }
+  }
+}
