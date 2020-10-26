@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import ReactGA from 'react-ga'
 import { Link } from 'gatsby'
 import { Carousel } from 'antd'
 
@@ -55,6 +56,10 @@ const IndexPage = () => {
       </Carousel>
     )
   }
+  useEffect(() => {
+    ReactGA.initialize(process.env.GATSBY_GA_ID)
+    ReactGA.pageview(window.location.pathname)
+  }, [])
   return (
     <Layout>
       <div className="Hero Home BackgroundImage" name="home">
@@ -102,7 +107,7 @@ const IndexPage = () => {
                 share the learnings from our experiments and open source our
                 processes for the community to learn and build from.
               </p>
-              <p style={{ fontStyle: 'italic' }}>
+              <p className="Quote">
                 "If you want to go fast, go alone.
                 <br />
                 If you want to go far, go together."
@@ -186,7 +191,7 @@ const IndexPage = () => {
       </div>
       <div className="Block Join">
         <div className="Block__Contents" name="join">
-          <div className="Contain800">
+          <div className="Contain600">
             <h2>Join the Guild</h2>
             <p>
               We believe workers should be self-sovereign and able to work when,

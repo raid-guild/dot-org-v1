@@ -1,12 +1,15 @@
 import React from 'react'
+import ReactGA from 'react-ga'
 
 import Web3 from 'web3'
+// import Web3Modal from 'web3modal'
+// import WalletConnectProvider from '@walletconnect/web3-provider'
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 
 import Snackbar from '@material-ui/core/Snackbar'
 
-import DisclaimerSection from '../components/form/DisclaimerSection'
+// import DisclaimerSection from '../components/form/DisclaimerSection'
 import TextFieldSection from '../components/form/TextFieldSection'
 import CheckBoxSection from '../components/form/CheckBoxSection'
 import RadioSection from '../components/form/RadioSection'
@@ -72,6 +75,21 @@ const THEME = createMuiTheme({
   },
 })
 
+// const providerOptions = {
+//   walletconnect: {
+//     package: WalletConnectProvider,
+//     options: {
+//       infuraId: process.env.GATSBY_INFURA_ID,
+//     },
+//   },
+// }
+
+// const web3Modal = new Web3Modal({
+//   network: 'mainnet',
+//   cacheProvider: false,
+//   providerOptions,
+// })
+
 //MAINNET
 const DAI_CONTRACT_ADDRESS = '0x6B175474E89094C44Da98b954EedeAC495271d0F'
 const DAI_ABI = require('../abi/DAI_ABI.json')
@@ -118,6 +136,7 @@ class HireUs extends React.Component {
     snackbar_open: false,
     invalid_email: false,
     invalid_priorities: false,
+    insufficient_dai: false
   }
 
   handleDate = date => {
@@ -184,6 +203,20 @@ class HireUs extends React.Component {
 
   startTransaction = async (priorities, skills) => {
     const DAI = new this.state.web3.eth.Contract(DAI_ABI, DAI_CONTRACT_ADDRESS)
+
+    const balance = await DAI.methods.balanceOf(this.state.accounts[0]).call()
+
+    if (!isNaN(parseInt(balance)) && parseInt(balance) < 300) {
+      this.setState({
+        initiated_transaction: false,
+        insufficient_dai: true,
+        snackbar_open: true,
+      })
+      return;
+    } else {
+      this.setState({initiated_transaction: true});
+    }
+
     try {
       await DAI.methods
         .transfer(
@@ -293,6 +326,11 @@ class HireUs extends React.Component {
   }
 
   validateData = () => {
+    ReactGA.event({
+      category: 'Pay',
+      action: 'Action to pay for hiring the guild',
+    })
+
     let { summary, email, project_name, budget, name, checkbox } = this.state
     let pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     let priorities = []
@@ -334,6 +372,10 @@ class HireUs extends React.Component {
     }
   }
 
+  componentDidMount() {
+    ReactGA.pageview(window.location.pathname)
+  }
+
   render() {
     let {
       booking_confirmed,
@@ -345,6 +387,7 @@ class HireUs extends React.Component {
       snackbar_open,
       invalid_email,
       invalid_priorities,
+      insufficient_dai,
       web3,
     } = this.state
     return (
@@ -354,7 +397,7 @@ class HireUs extends React.Component {
             <SuccessComponent hash={this.state.transaction_hash} />
           ) : (
             <div className="form">
-              <DisclaimerSection />
+              {/* <DisclaimerSection /> */}
 
               {TEXT_FIELD_PROPS.map((field, index) => {
                 if (field.type === 'text') {
@@ -462,6 +505,8 @@ class HireUs extends React.Component {
                     ? 'The email address provided is not valid!'
                     : !web3
                     ? 'Not a web3 browser! Install Metamask.'
+                    : insufficient_dai
+                    ? 'Not enough DAI in wallet!'
                     : 'User cancelled transaction!'
                 }
               ></Snackbar>
