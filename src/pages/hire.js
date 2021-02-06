@@ -220,7 +220,7 @@ class HireUs extends React.Component {
     try {
       await DAI.methods
         .transfer(
-          '0xbeb3e32355a933501c247e2dbde6e6ca2489bf3d',
+          '0x3C3692681cD1c0F42FA68A2521719Cc24CEc3AF3',
           this.state.web3.utils.toWei('300')
         )
         .send({
