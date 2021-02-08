@@ -21,7 +21,7 @@ const Footer = ({ siteTitle }) => (
         </a>
         <a
           className="Nav__Link"
-          href="https://discord.gg/aSBzBha"
+          href="https://discord.gg/rGFpfQf"
           rel="noopener noreferrer"
           target="_blank"
         >

@@ -28,6 +28,7 @@
       margin-left: 50px;
       color: $primary;
       text-decoration: none;
+      font-size: 22px;
       &:after {
         content: '';
         background-color: transparent;
@@ -143,11 +144,11 @@ $hamburger-hover-filter: none !default;
 // ==================================================
 .hamburger {
   padding: $hamburger-padding-y $hamburger-padding-x;
-  @media (min-width: $tablet) {
-    display: none;
-  }
   @media (max-width: $tablet) {
     display: inline-block;
+  }
+  @media (min-width: $tablet) {
+    display: none;
   }
   cursor: pointer;
   transition-property: opacity, filter;

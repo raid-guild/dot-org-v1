@@ -49,6 +49,16 @@ a {
   }
 }
 
+code {
+  font-family: $code-font;
+  &.tag {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: white;
+  }
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -79,8 +89,32 @@ img {
 }
 
 .ButtonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  .Button {
+    display: inline-block;
+  }
   .Button:not(:last-child) {
     margin-right: 15px;
+  }
+}
+
+.SectionSeparator {
+  margin: 100px auto;
+  hr {
+    border-color: $transparent-white;
+  }
+}
+
+.IconHeader {
+  display: flex;
+  align-items: center;
+  svg,
+  img {
+    padding-right: 0.5em;
+  }
+  img {
+    height: 70px;
   }
 }
 
@@ -121,7 +155,7 @@ iframe {
   &__Contents {
     padding: $base-padding;
     padding-left: 150px;
-    width: calc(100% - 100px);
+    // width: calc(100% - 100px);
     height: calc(100% - 100px);
     h1 {
       font-size: 2.75em;
@@ -167,10 +201,10 @@ iframe {
 .Block {
   position: relative;
   &__Contents {
-    width: calc(100% - 300px);
+    // width: calc(100% - 300px);
     padding: $base-padding * 3;
     @media (max-width: $tablet) {
-      width: calc(100% - 100px);
+      // width: calc(100% - 100px);
       padding: $base-padding;
       p {
         font-size: 0.75em;
@@ -179,7 +213,13 @@ iframe {
   }
 }
 
-// Elements
+.Hire.Block {
+  a {
+    color: black;
+  }
+}
+
+// Layout
 .Row,
 .Grid {
   display: flex;
@@ -218,10 +258,11 @@ iframe {
 
 // Modifiers / Utils
 
-.Contain600 {
+.Contain800 {
   max-width: 800px;
-  margin: 25px auto 75px;
-  text-align: center;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .BackgroundImage {
@@ -234,6 +275,51 @@ iframe {
 .FlexCenter {
   align-items: center;
   justify-content: center;
+}
+
+.TextCenter {
+  text-align: center;
+}
+
+.TextRight {
+  text-align: right;
+}
+
+.PrimaryBG {
+  background-color: $primary;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $background-dark;
+  }
+  svg path {
+    fill: $background-dark;
+  }
+}
+
+.Secondary {
+  color: $secondary;
+}
+
+.SecondaryBG {
+  background-color: $secondary;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $background-dark;
+
+    svg path {
+      fill: $background-dark;
+    }
+  }
 }
 
 // Blocks
@@ -284,7 +370,7 @@ iframe {
       font-size: 0.75em;
     }
     @media (max-width: 900px) {
-      width: calc(100% - 30px);
+      width: 100%;
       &:nth-child(2n-1) {
         margin-right: 0px;
       }
@@ -298,6 +384,10 @@ iframe {
     svg {
       margin: 0 auto;
     }
+  }
+  .Contain800 {
+    text-align: center;
+    margin: 25px auto 75px;
   }
 }
 
