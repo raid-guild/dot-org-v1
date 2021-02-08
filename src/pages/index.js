@@ -69,9 +69,14 @@ const IndexPage = () => {
             Product Demons
           </p>
           <div className="ButtonGroup">
-            <Link className="Button Filled" to="/hire">
+            <a
+              className="Button Filled"
+              href="https://hireus.raidguild.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Hire Us
-            </Link>
+            </a>
             <Link className="Button" to="/join">
               Join Us
             </Link>
@@ -145,9 +150,14 @@ const IndexPage = () => {
                 experience to turn your ideas into reality. We are lean to the
                 core and deliver high quality results with quick turnarounds.
               </p>
-              <Link className="Button" to="/hire">
+              <a
+                className="Button"
+                href="https://hireus.raidguild.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Hire Us
-              </Link>
+              </a>
             </div>
 
             <div className="Column Column--50">

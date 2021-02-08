@@ -22,7 +22,13 @@ const TopNav = () => {
         <a href="/#services">Services</a>
         <Link to="/portfolio">Portfolio</Link>
         <Link to="/join">Join</Link>
-        <Link to="/hire">Hire</Link>
+        <a
+          href="https://hireus.raidguild.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hire
+        </a>
       </nav>
       {/* Start Hamburger */}
       <button className={hamburgerClass} type="button" onClick={toggleNav}>
