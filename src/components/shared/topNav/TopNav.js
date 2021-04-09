@@ -50,9 +50,13 @@ const TopNav = () => {
           <Link to="/join" onClick={toggleNav}>
             Join
           </Link>
-          <Link to="/hire" onClick={toggleNav}>
-            Hire
-          </Link>
+          <a
+          href="https://hireus.raidguild.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hire
+        </a>
         </div>
       </div>
       {/* End Hamburger */}
