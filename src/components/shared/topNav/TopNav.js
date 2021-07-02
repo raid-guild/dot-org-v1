@@ -18,10 +18,10 @@ const TopNav = () => {
   return (
     <>
       <nav className="TopNav__Desktop">
-        <a href="/#manifesto">Manifesto</a>
-        <a href="/#services">Services</a>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/join">Join</Link>
+        <a href="https://raidguild.org/manifesto">Manifesto</a>
+        <a href="https://raidguild.org/services">Services</a>
+        <a href="https://raidguild.org/portfolio">Portfolio</a>
+        <a href="https://raidguild.org/join">Join</a>
         <a
           href="https://hireus.raidguild.org/"
           target="_blank"
@@ -51,12 +51,12 @@ const TopNav = () => {
             Join
           </Link>
           <a
-          href="https://hireus.raidguild.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hire
-        </a>
+            href="https://hireus.raidguild.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hire
+          </a>
         </div>
       </div>
       {/* End Hamburger */}
