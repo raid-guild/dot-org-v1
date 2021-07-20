@@ -18,8 +18,8 @@ const TopNav = () => {
   return (
     <>
       <nav className="TopNav__Desktop">
-        <a href="https://raidguild.org/manifesto">Manifesto</a>
-        <a href="https://raidguild.org/services">Services</a>
+        <a href="https://raidguild.org/#manifesto">Manifesto</a>
+        <a href="https://raidguild.org/#services">Services</a>
         <a href="https://raidguild.org/portfolio">Portfolio</a>
         <a href="https://raidguild.org/join">Join</a>
         <a
