@@ -18,11 +18,17 @@ const TopNav = () => {
   return (
     <>
       <nav className="TopNav__Desktop">
-        <a href="/#manifesto">Manifesto</a>
-        <a href="/#services">Services</a>
-        <Link to="/portfolio">Portfolio</Link>
-        <Link to="/join">Join</Link>
-        <Link to="/hire">Hire</Link>
+        <a href="https://raidguild.org/#manifesto">Manifesto</a>
+        <a href="https://raidguild.org/#services">Services</a>
+        <a href="https://raidguild.org/portfolio">Portfolio</a>
+        <a href="https://raidguild.org/join">Join</a>
+        <a
+          href="https://hireus.raidguild.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Hire
+        </a>
       </nav>
       {/* Start Hamburger */}
       <button className={hamburgerClass} type="button" onClick={toggleNav}>
@@ -44,9 +50,13 @@ const TopNav = () => {
           <Link to="/join" onClick={toggleNav}>
             Join
           </Link>
-          <Link to="/hire" onClick={toggleNav}>
+          <a
+            href="https://hireus.raidguild.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Hire
-          </Link>
+          </a>
         </div>
       </div>
       {/* End Hamburger */}
